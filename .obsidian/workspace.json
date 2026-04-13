@@ -1,0 +1,225 @@
+{
+  "main": {
+    "id": "49fd9adec194448e",
+    "type": "split",
+    "children": [
+      {
+        "id": "ff6dc21db6b5a6f0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c0701cde3acd9ee3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "README"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d95ece9c6a58d9cd",
+    "type": "split",
+    "children": [
+      {
+        "id": "cd0ebc5728ddff70",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6fa0419607660c41",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Explorador de archivos"
+            }
+          },
+          {
+            "id": "d9499216ca8cffbd",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Buscar"
+            }
+          },
+          {
+            "id": "9d61bffcd03f455e",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Marcadores"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "40cc244e9424a924",
+    "type": "split",
+    "children": [
+      {
+        "id": "5a5d92be4c60d49a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2de02f2c2724739e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "yo.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Enlaces entrantes de yo"
+            }
+          },
+          {
+            "id": "9ac62f85b65d80f1",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "yo.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Enlaces salientes de yo"
+            }
+          },
+          {
+            "id": "ed5d1e84e2ec8b91",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Etiquetas"
+            }
+          },
+          {
+            "id": "296b1ec214c4a07f",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Todas las propiedades"
+            }
+          },
+          {
+            "id": "a4d2a85c521c0c53",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "yo.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Esquema de yo"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Abrir selector rápido": false,
+      "graph:Abrir vista gráfica": false,
+      "canvas:Crear nuevo lienzo": false,
+      "daily-notes:Abrir la nota de hoy": false,
+      "templates:Insertar plantilla": false,
+      "command-palette:Abrir paleta de comandos": false,
+      "bases:Crear nueva base": false
+    }
+  },
+  "active": "c0701cde3acd9ee3",
+  "lastOpenFiles": [
+    "README.md.tmp.15188.1776058772291",
+    "evolucion.md",
+    "universo.md",
+    "README.md",
+    "skill/control-de-mision.md",
+    "skill",
+    "_plantillas/plantilla-mision.md",
+    "propuesta-estructura.md.tmp.16404.1776058061029",
+    "README.md.tmp.16404.1776058042304",
+    "README.md.tmp.16404.1776058033572",
+    "README.md.tmp.16404.1776058014879",
+    "context/propuesta-skill-automatizacion.md",
+    "nebulosa-mental/_mapa-estelar.md",
+    "mis-sistemas-identidad/_mapa-estelar.md",
+    "mis-proyectos-dev/_mapa-estelar.md",
+    "enter-tech-school/_mapa-estelar.md",
+    "_plantillas/plantilla-aclarador.md",
+    "context/propuesta-estructura.md",
+    "nebulosa-mental/destellos.md",
+    "_plantillas/plantilla-aclarador.md.tmp.9060.1776055793277",
+    "_plantillas/plantilla-mision.md.tmp.9060.1776055789815",
+    "_plantillas",
+    "enter-tech-school/README.md",
+    "nebulosa-mental/README.md",
+    "contexto-inicial-gestion.md",
+    "yo.md",
+    "aclarador-diario/README.md",
+    "aclarador-diario",
+    "nebulosa-mental",
+    "mis-sistemas-identidad/README.md",
+    "mis-proyectos-dev/README.md",
+    "context/contexto-inicial-gestion.md",
+    "context/yo.md",
+    "Sin título.canvas",
+    "Sin título 1.canvas"
+  ]
+}
