@@ -6,31 +6,33 @@ Todo lo que estoy construyendo por mi cuenta.
 
 ## Misiones activas
 
-(Agrega links a tus proyectos activos, por ejemplo:)
-- [[mi-app]]
+(Aún no hay misiones activas.)
 
 ---
 
 ## Tareas pendientes
 
-```tasks
-not done
-path includes mis-proyectos-dev
-description does not include #exclude
+```dataview
+TASK
+FROM "mis-proyectos-dev"
+WHERE !completed
+SORT due ASC
 ```
 
 ## ⏳ Esperando algo
 
-```tasks
-not done
-path includes mis-proyectos-dev
-description includes ⏳
+```dataview
+TASK
+FROM "mis-proyectos-dev"
+WHERE !completed AND contains(text, "⏳")
+SORT text ASC
 ```
 
 ## ✅ Completadas recientemente
 
-```tasks
-done
-path includes mis-proyectos-dev
-done after 7 days ago
+```dataview
+TASK
+FROM "mis-proyectos-dev"
+WHERE completed
+SORT text ASC
 ```

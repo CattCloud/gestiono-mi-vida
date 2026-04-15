@@ -6,23 +6,24 @@ Los hábitos y sistemas que estoy construyendo.
 
 ## Misiones activas
 
-(Agrega links a tus sistemas activos, por ejemplo:)
-- [[habito-lectura]]
+(Aún no hay misiones activas.)
 
 ---
 
 ## Tareas pendientes
 
-```tasks
-not done
-path includes mis-sistemas-identidad
-description does not include #exclude
+```dataview
+TASK
+FROM "mis-sistemas-identidad"
+WHERE !completed
+SORT due ASC
 ```
 
 ## ✅ Completadas recientemente
 
-```tasks
-done
-path includes mis-sistemas-identidad
-done after 7 days ago
+```dataview
+TASK
+FROM "mis-sistemas-identidad"
+WHERE completed
+SORT text ASC
 ```

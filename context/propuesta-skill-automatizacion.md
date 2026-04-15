@@ -46,7 +46,7 @@ Tú hablas en lenguaje natural, el modelo actúa
 - Identifica que ambas son de Enter Tech School
 - Te pregunta a qué misión pertenece cada una (o propone si es obvio)
 - Si la misión no existe, ofrece crearla
-- Agrega las tareas con formato `- [ ]` y fecha `📅 2026-04-18` si aplica
+- Agrega las tareas con formato `- [ ]` y fecha con doble formato `(18-abr-2026) 📅 2026-04-18` si aplica
 - Actualiza el aclarador de cada misión afectada
 
 ---

@@ -88,7 +88,7 @@ El usuario te va a hablar en prosa. Tu trabajo es:
 4. Si la misión no existe, ofrecer crearla
 5. Proponer los cambios y esperar confirmación
 6. Agregar cada tarea con formato `- [ ]` en la sección "## Tareas" del archivo correspondiente
-7. Si hay fecha, agregar `📅 YYYY-MM-DD`
+7. Si hay fecha, agregar con doble formato: `(DD-mes-AAAA) 📅 YYYY-MM-DD`
 8. Si depende de alguien/algo, agregar `⏳` al final
 9. Actualizar el aclarador de la misión con el contexto que el usuario dio
 
@@ -97,7 +97,7 @@ El usuario te va a hablar en prosa. Tu trabajo es:
 
 **Lo que propones:**
 > Detecté 3 cosas en lo que me dices:
-> 1. Testing del formulario → bootcamp.md, con fecha 📅 2026-04-18
+> 1. Testing del formulario → bootcamp.md, con fecha (18-abr-2026) 📅 2026-04-18
 > 2. Esperar datos de exportación de Gabriela → bootcamp.md, marcada con ⏳
 > 3. Revisar diseño del landing → ¿va en bootcamp o es otra misión?
 >
@@ -242,7 +242,7 @@ tags: [planeta, nombre-mision]
 
 ## Tareas
 
-- [ ] Tarea pendiente 📅 2026-04-18
+- [ ] Tarea pendiente (18-abr-2026) 📅 2026-04-18
 - [ ] Tarea esperando algo ⏳
 - [x] Tarea completada ✅
 
@@ -256,9 +256,14 @@ tags: [planeta, nombre-mision]
 |---|---|---|
 | `- [ ]` | Tarea pendiente | `- [ ] Hacer testing` |
 | `- [x]` | Tarea completada | `- [x] Implementar filtro ✅` |
-| `📅 YYYY-MM-DD` | Fecha de vencimiento | `📅 2026-04-18` |
+| `(DD-mes-AAAA) 📅 YYYY-MM-DD` | Fecha legible + fecha para Dataview | `(18-abr-2026) 📅 2026-04-18` |
 | `⏳` | Esperando respuesta/dependencia | `Exportación de Gabriela ⏳` |
 | `✅` | Marcador visual de completado | (opcional, refuerza visualmente) |
+
+**Formato de fechas (doble formato):**
+Las tareas con fecha llevan DOS formatos: uno legible para Erick `(DD-mes-AAAA)` y uno técnico para Dataview `📅 YYYY-MM-DD`. El legible va entre paréntesis ANTES del emoji de calendario. Meses abreviados en español: ene, feb, mar, abr, may, jun, jul, ago, sep, oct, nov, dic. El formato `📅 YYYY-MM-DD` es leído automáticamente por Dataview, CardBoard y Full Calendar.
+
+Ejemplo completo: `- [ ] Testear formulario (15-abr-2026) 📅 2026-04-15`
 
 ---
 
@@ -308,6 +313,24 @@ gestiono-mi-vida/
 
 ---
 
-## 7. Recordatorio final
+## 7. Plugins de Obsidian del sistema
+
+El vault usa estos plugins para visualización. El agente IA NO depende de ellos — opera directamente sobre los archivos .md. Los plugins son la capa visual de Obsidian.
+
+| Plugin | Función | Notas |
+|---|---|---|
+| **Dataview** | Queries en dashboards (universo.md, mapas estelares). Lee `📅 YYYY-MM-DD` como fecha `due`. | Las queries están en bloques ` ```dataview ``` `. El agente puede editarlas. |
+| **CardBoard** | Vista Kanban de tareas. Lee `- [ ]` de los archivos .md. | Completar en el tablero actualiza el archivo. |
+| **Full Calendar** | Vista calendario de tareas del vault por fecha. | Complementa a Google Calendar (que muestra eventos externos). |
+| **Google Calendar** | Muestra Google Calendar dentro de Obsidian. | Para ver tareas de ClickUp y reuniones. Plugin en modo "stale" — funcional pero sin mantenimiento activo. |
+| **Minimal (tema)** | Tema visual limpio y profesional. | Acompañado de Style Settings para personalización. |
+| **Style Settings** | Panel de personalización visual del tema. | Sin código, solo ajustes visuales. |
+
+**Plugins eliminados:**
+- ~~Tasks (Clare Macrae)~~ — Reemplazado por Dataview (queries más potentes) + CardBoard (vista visual).
+
+---
+
+## 8. Recordatorio final
 
 Este sistema existe para **quitarle peso mental a Erick**, no para agregárselo. Si en algún momento el sistema se siente como una carga, algo está mal y hay que simplificarlo. La estructura se adapta a él, no al revés.

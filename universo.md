@@ -6,58 +6,67 @@ Vista global de todo lo que tengo pendiente, en todos los planetas.
 
 ## Hoy
 
-```tasks
-not done
-due today
+```dataview
+TASK
+FROM "enter-tech-school" OR "mis-proyectos-dev" OR "mis-sistemas-identidad" OR "nebulosa-mental"
+WHERE !completed AND due = date(today)
+SORT text ASC
 ```
 
 ## Esta semana
 
-```tasks
-not done
-due before next week
-due after yesterday
+```dataview
+TASK
+FROM "enter-tech-school" OR "mis-proyectos-dev" OR "mis-sistemas-identidad" OR "nebulosa-mental"
+WHERE !completed AND due >= date(today) AND due <= date(today) + dur(7 days)
+SORT due ASC
 ```
 
 ---
 
 ## 🪐 Enter Tech School
 
-```tasks
-not done
-path includes enter-tech-school
-description does not include #exclude
+```dataview
+TASK
+FROM "enter-tech-school"
+WHERE !completed
+SORT due ASC
 ```
 
 ## 🪐 Mis Proyectos Dev
 
-```tasks
-not done
-path includes mis-proyectos-dev
-description does not include #exclude
+```dataview
+TASK
+FROM "mis-proyectos-dev"
+WHERE !completed
+SORT due ASC
 ```
 
 ## 🪐 Mis Sistemas de Identidad
 
-```tasks
-not done
-path includes mis-sistemas-identidad
-description does not include #exclude
+```dataview
+TASK
+FROM "mis-sistemas-identidad"
+WHERE !completed
+SORT due ASC
 ```
 
 ## 🌫️ Nebulosa Mental
 
-```tasks
-not done
-path includes nebulosa-mental
-description does not include #exclude
+```dataview
+TASK
+FROM "nebulosa-mental"
+WHERE !completed
+SORT text ASC
 ```
 
 ---
 
 ## ⏳ Esperando respuesta
 
-```tasks
-not done
-description includes ⏳
+```dataview
+TASK
+FROM "enter-tech-school" OR "mis-proyectos-dev" OR "mis-sistemas-identidad" OR "nebulosa-mental"
+WHERE !completed AND contains(text, "⏳")
+SORT text ASC
 ```

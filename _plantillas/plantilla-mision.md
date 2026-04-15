@@ -9,6 +9,7 @@ tags: []
 
 ## Tareas
 
-- [ ] 
+- [ ] Tarea ejemplo (DD-mes-AAAA) 📅 YYYY-MM-DD
+- [ ] Tarea esperando algo ⏳
 
 ## Notas

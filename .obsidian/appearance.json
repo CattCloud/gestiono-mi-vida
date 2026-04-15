@@ -1,8 +1,12 @@
 {
-  "accentColor": "#914040",
-  "cssTheme": "Soli Deo Gloria",
+  "accentColor": "#ffffff",
+  "cssTheme": "Shimmering Focus",
   "baseFontSize": 17,
   "interfaceFontFamily": "Calibri",
   "textFontFamily": "Calibri",
-  "monospaceFontFamily": "Inter"
+  "monospaceFontFamily": "Inter",
+  "theme": "moonstone",
+  "nativeMenus": true,
+  "showRibbon": true,
+  "showViewHeader": false
 }

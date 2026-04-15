@@ -104,7 +104,7 @@ gestiono-mi-vida/
 
 ## Plugins de Obsidian
 
-- **Tasks** (esencial) — Renderiza las queries en universo.md y los mapas estelares como vistas vivas de tareas.
-- **Dataview** (recomendado) — Queries avanzadas para vistas más complejas.
+- **Dataview** (esencial) — Renderiza las queries en universo.md y los mapas estelares como vistas vivas de tareas. Reemplaza al plugin Tasks con queries más potentes.
+- **CardBoard** (esencial) — Vista Kanban/Date de tareas. Lee los `- [ ]` de los archivos y los muestra como tarjetas en columnas por fecha o estado.
+- **Shimmering Focus** (tema) — Tema visual limpio con enfoque en la escritura sin distracciones.
 - **Templater** (opcional) — Para crear misiones desde plantilla con un click.
-- **Calendar** (opcional) — Vista de calendario para navegar aclaradores diarios.

@@ -93,7 +93,7 @@ del formulario. Gabriela aún no responde sobre la exportación.
 
 ## Tareas
 
-- [ ] Formulario de Matriculados: mostrar en la reunión, falta test 📅 2026-04-18
+- [ ] Formulario de Matriculados: mostrar en la reunión, falta test (18-abr-2026) 📅 2026-04-18
   - REQUIERE: Crear la skill de Test para proyectos
 - [x] Adiciones de Filtro de fechas: Implementado y en main ✅
 - [ ] Exportación de datos (Gabriela): en curso, esperando respuesta ⏳
@@ -108,7 +108,7 @@ del formulario. Gabriela aún no responde sobre la exportación.
 - **Tags** en el frontmatter → permiten filtrar desde el dashboard global
 - **Aclarador** → tu prosa libre, cómo piensas, qué está pasando
 - **Tareas** → formato `- [ ]` compatible con Obsidian Tasks
-- **📅** → fecha de vencimiento (la lee el plugin Tasks)
+- **(DD-mes-AAAA) 📅 YYYY-MM-DD** → fecha legible para el usuario + fecha técnica para el plugin Tasks
 - **⏳** → indicador visual de "esperando algo" (opcional)
 - **Notas** → espacio libre para lo que surja
 
