@@ -17,7 +17,7 @@ Al iniciar cada conversación, lee estos archivos en este orden:
    - `mis-sistemas-identidad/_mapa-estelar.md`
    - `nebulosa-mental/_mapa-estelar.md`
 4. `nebulosa-mental/destellos.md` — Tareas sueltas sin procesar
-5. `evolucion.md` — Mejoras pendientes y problemas detectados del sistema
+5. `notas.md` — Notas rápidas capturadas al vuelo por el usuario (modificaciones a tareas, ideas de mejora, nebulosa sin categoría)
 
 Con esto tienes un snapshot completo del universo del usuario y del estado de evolución del sistema.
 
@@ -25,7 +25,12 @@ Con esto tienes un snapshot completo del universo del usuario y del estado de ev
 
 ## 2. Saludo inicial
 
-Antes de saludar, haz **silenciosamente** el barrido de limpieza descrito en la sección 4.12. Si encuentras inconsistencias, menciónalas brevemente al final del saludo para que el usuario decida si quiere que las limpies. No interrumpas su flujo con esto — es un aviso, no una traba.
+Antes de saludar, haz **silenciosamente** dos chequeos:
+
+1. El barrido de limpieza descrito en la sección 4.11.
+2. Contar ítems pendientes (`- [ ]`) en `notas.md`, agrupados por sección (Tareas con modificación / Ideas de mejora / Nebulosa).
+
+Si encuentras inconsistencias del barrido o notas sin procesar, menciónalos brevemente al final del saludo para que el usuario decida si quiere atenderlos. No interrumpas su flujo con esto — son avisos, no trabas.
 
 Luego, **NO des un resumen automático**. Pregúntale al usuario qué prefiere:
 
@@ -35,9 +40,14 @@ Si pide el resumen, preséntalo en un formato limpio y fácil de leer:
 - Tareas para hoy (si hay con fecha de hoy)
 - Cantidad de pendientes por planeta
 - Destellos sin procesar
+- Notas sin procesar (si hay ítems pendientes en `notas.md`)
 - Misiones sin actividad reciente (si las hay)
 
 Si trae algo en mente, escucha y actúa.
+
+Ejemplo de aviso al final del saludo:
+
+> "Por cierto, tienes 3 notas sin procesar en `notas.md` (2 modificaciones de tareas y 1 idea de mejora). ¿Las revisamos antes de seguir?"
 
 ---
 
@@ -82,39 +92,57 @@ Solo después de su confirmación, realiza los cambios.
 
 ### 4.1 Crear tareas desde lenguaje natural
 
-El usuario te va a hablar en prosa. Tu trabajo es:
+El usuario te va a hablar en prosa. Cada tarea en este vault es **un archivo .md propio** con frontmatter rico (ver sección 5). Tu trabajo es:
 
-1. Detectar las tareas implícitas en lo que dice
-2. Identificar a qué planeta y misión pertenecen
+1. Detectar las tareas implícitas en lo que dice.
+2. Identificar a qué planeta, misión y sub-misión pertenecen (4 niveles: Planeta → Misión → Sub-misión → Tarea). La sub-misión es opcional: si no aplica, la tarea va en `tareas-sueltas/` dentro de la misión.
 3. Si no es claro, preguntar: "¿Esto va en [planeta/misión] o en otro lado?"
-4. Si la misión no existe, ofrecer crearla
-5. Proponer los cambios y esperar confirmación
-6. Agregar cada tarea con formato `- [ ]` en la sección "## Tareas" del archivo correspondiente
-7. Si hay fecha, agregar solo con formato técnico: `📅 YYYY-MM-DD` (NO agregar el formato legible entre paréntesis — fue eliminado por generar doble trabajo al editar fechas)
-8. Si depende de alguien/algo, agregar `⏳` al final
-9. Actualizar el aclarador de la misión con el contexto que el usuario dio
+4. Si la misión o sub-misión no existe, ofrecer crearla.
+5. Para cada tarea, **preguntar el peso (1/2/3)** salvo que sea obvio por el contexto (ver escala abajo). Si propones un peso, justifícalo brevemente.
+6. Proponer los cambios y esperar confirmación.
+7. Crear el archivo de la tarea usando `_plantillas/plantilla-tarea.md` como base, con su frontmatter y sus 4 secciones (Detalle, Contexto para la IA, Notas, Tarea CardBoard).
+8. Actualizar el `_aclarador.md` de la misión/sub-misión agregando el enlace a la tarea nueva.
+
+**Escala de pesos:**
+
+| Peso | Emoji | Naturaleza | Ejemplos |
+|---|---|---|---|
+| **1** | 🟡 | Aislada y rápida. Una acción, sin dependencias ni subtareas. | Enviar mensaje, limpiar logs, confirmar algo |
+| **2** | 🟣 | Aislada pero requiere tiempo o pensamiento. | Investigar, leer manual, diseñar algo simple, reunión |
+| **3** | 🟠 | Compleja. Subtareas, dependencias, o naturaleza impredecible. | Implementar feature, hacer deploy, coordinar con varias personas |
+
+**Formato de la línea CardBoard (dentro del archivo .md de la tarea):**
+
+El emoji de peso va **al inicio** del texto, justo después de `[ ]`, porque CardBoard trunca textos largos — si el emoji va al final, desaparece:
+
+- Pendiente con fecha: `- [ ] 🟡 Texto de la tarea 📅 2026-04-20`
+- En espera: `- [ ] 🟣 Texto de la tarea ⏳`
+- Bloqueada: `- [ ] 🟠 Texto de la tarea 🔒`
+- Completada: `- [x] 🟡 Texto de la tarea 📅 2026-04-20 ✅ 2026-04-20`
 
 **Ejemplo de entrada del usuario:**
 > "Mira, el tema del bootcamp está complicado. Necesito hacer el testing del formulario para el viernes, pero antes necesito que Gabriela me pase los datos de exportación. También me pidieron revisar el diseño del landing."
 
 **Lo que propones:**
-> Detecté 3 cosas en lo que me dices:
-> 1. Testing del formulario → bootcamp.md, con fecha 📅 2026-04-18
-> 2. Esperar datos de exportación de Gabriela → bootcamp.md, marcada con ⏳
+> Detecté 3 tareas:
+> 1. Testing del formulario → `bootcamp/testing-formulario/.md` — peso 🟣 2 (requiere tiempo, casos de borde), fecha 📅 2026-04-18
+> 2. Esperar datos de exportación de Gabriela → peso 🟡 1 (esperar pasivo), estado ⏳
 > 3. Revisar diseño del landing → ¿va en bootcamp o es otra misión?
 >
-> También voy a actualizar el aclarador del bootcamp con el contexto que me diste. ¿Procedo?
+> Voy a crear un .md por cada una con su frontmatter + secciones, y actualizar el aclarador del bootcamp. ¿Procedo?
 
 ---
 
 ### 4.2 Completar tareas
 
-1. Busca la tarea en el vault (usa el texto que el usuario mencione para localizarla)
-2. Propón el cambio: "Voy a marcar [tarea] como completada en [archivo] y actualizar el aclarador."
+1. Busca la tarea en el vault (usa el texto que el usuario mencione para localizarla). Recuerda: cada tarea es su propio .md, típicamente bajo una sub-misión o en `tareas-sueltas/`.
+2. Propón el cambio: "Voy a marcar [tarea] como completada en [ruta/del/archivo.md] y actualizar el aclarador."
 3. Tras confirmación:
-   - Cambia `- [ ]` a `- [x]`
-   - Agrega `✅` si el usuario lo usa
-   - Actualiza el aclarador reflejando el avance
+   - En el frontmatter: cambiar `estado: pendiente` (o el que tuviera) a `estado: completada`, y agregar `fecha_completado: YYYY-MM-DD`.
+   - En la línea de CardBoard: cambiar `- [ ]` a `- [x]` y agregar `✅ YYYY-MM-DD` al final.
+   - Si estaba con `⏳`, quitarlo.
+   - Actualizar el `_aclarador.md` de la misión/sub-misión reflejando el avance (cambiar el emoji de estado en el listado de tareas).
+4. Si la tarea tenía `desbloquea: [otra-tarea]` en su frontmatter, revisar si la otra tarea debería pasar de `bloqueada` a `pendiente` y proponerlo al usuario.
 
 ---
 
@@ -147,15 +175,23 @@ Cuando el usuario diga algo como "acuérdate de...", "anota que...", o mencione 
 
 ---
 
-### 4.6 Crear nuevas misiones
+### 4.6 Crear nuevas misiones o sub-misiones
 
-1. Identifica el planeta donde va
-2. Propón: "Creo la misión [nombre] en [planeta]. Voy a escribir un aclarador inicial con lo que me contaste."
+**Misión nueva:**
+1. Identifica el planeta donde va.
+2. Propón: "Creo la misión [nombre] en [planeta]. Voy a crear una carpeta con un `_aclarador.md` adentro."
 3. Tras confirmación:
-   - Crea el archivo usando la estructura de `_plantillas/plantilla-mision.md`
-   - Llena el aclarador con el contexto dado
-   - Agrega tags apropiados
-   - Agrega el link en el `_mapa-estelar.md` del planeta bajo "Misiones activas"
+   - Crea la carpeta `planeta/nombre-mision/`.
+   - Dentro, crea `_aclarador.md` con frontmatter `tipo: mision` y las secciones: Aclarador, Sub-misiones activas, Tareas sueltas, Notas.
+   - Opcionalmente crea las subcarpetas `tareas-sueltas/` (y sub-misiones si las conoces).
+   - Agrega el link en el `_mapa-estelar.md` del planeta bajo "Misiones activas".
+
+**Sub-misión nueva dentro de una misión existente:**
+1. Propón: "Creo la sub-misión [nombre] dentro de [misión]."
+2. Tras confirmación:
+   - Crea la carpeta `planeta/mision/sub-mision/`.
+   - Dentro, crea `_aclarador.md` con frontmatter `tipo: sub-mision` y `mision_padre: [nombre-mision]`.
+   - Agrega el link en el `_aclarador.md` de la misión bajo "Sub-misiones activas".
 
 ---
 
@@ -238,137 +274,39 @@ Erick marca muchas tareas con `[x]` rápidamente desde el tablero de CardBoard o
 
 ---
 
-### 4.12 Registrar mejoras o problemas del sistema
+### 4.12 Procesar `notas.md`
 
-Cuando el usuario diga algo como "esto el sistema no lo contempla", "se me ocurrió una mejora", "aquí hay un problema", o cuando tú como agente detectes una limitación del sistema durante la interacción:
+`notas.md` es el cuaderno de captura rápida del usuario. Vive en la raíz del vault y tiene 3 secciones fijas:
 
-1. No interrumpas lo que estás haciendo
-2. Propón: "Detecto una situación de mejora. ¿La registro en evolucion.md?"
-3. Tras confirmación, agrega una entrada en `evolucion.md` con el formato:
+- **✏️ Tareas con modificación** — cambios a tareas existentes (pesos, fechas, cancelaciones, cambios de estado)
+- **💡 Ideas de mejora del sistema** — cosas que le faltan al vault o al skill
+- **🌫️ Nebulosa (sin categoría)** — referencias, preguntas sueltas, datos que no quiere olvidar
 
-```markdown
-### [YYYY-MM-DD] Título breve
+El usuario escribe ahí en **texto libre**, sin preocuparse por formato. Tu trabajo es ayudarlo a procesar esas notas cuando lo pida ("procesemos las notas", "revisa notas.md", "veamos qué tengo anotado") o al inicio de una conversación si hay pendientes acumuladas.
 
-**Situación:** Qué estaba pasando cuando se detectó esto.
-**Problema / Idea:** Qué le falta al sistema o qué se podría mejorar.
-**Prioridad:** alta / media / baja
-**Estado:** pendiente
-```
+**Flujo de procesamiento:**
 
-4. La entrada más reciente va arriba, debajo del encabezado "## Registro"
-5. Continúa con lo que estabas haciendo
+1. Lee `notas.md` y agrupa los ítems pendientes (`- [ ]`) por sección.
+2. Por cada ítem, propón una acción concreta:
+   - **Tareas con modificación:** infiere de qué tarea habla (texto libre → archivo .md real). Propón el cambio exacto. Ejemplo: "La primera dice 'la del PR del formulario ahora es peso 1' — es `app-enterbase/formulario-matriculados/05-hacer-pr-y-merge.md`. ¿Cambio peso de 2 a 1 y actualizo el aclarador?"
+   - **Ideas de mejora:** discutan si es relevante, si es para el skill o para el vault, y si hay que implementarla ahora o dejarla anotada. Si se implementa, aplícala.
+   - **Nebulosa:** pregunta si se convierte en destello, en tarea, en referencia guardada en otro lado, o se descarta.
+3. Tras confirmación y acción, **marca el ítem como `[x]`** en `notas.md` para que quede el histórico.
+4. Si un ítem no se puede resolver aún (requiere info externa, decisión pendiente), déjalo en `[ ]` y sigue.
 
-**Importante:** Esto también aplica cuando TÚ como agente detectes algo — no esperes a que el usuario lo mencione. Si ves que algo no encaja, proponlo.
+**Cuando TÚ (agente) detectes algo durante la conversación** que el usuario querría anotar (una mejora posible, un patrón roto, una inconsistencia):
+
+1. No interrumpas el flujo actual.
+2. Propón: "Detecto [X]. ¿Lo anoto en `notas.md` bajo [sección] para procesarlo después?"
+3. Tras confirmación, agrega el ítem como `- [ ]` en la sección correspondiente.
+4. Continúa con lo que estabas haciendo.
+
+**Importante:**
+- No obligues al usuario a estructurar sus notas. Aunque escriba "la del PR ahora es 1" sin más, tu rol es inferir el resto.
+- Nunca borres notas, solo márcalas `[x]`. El histórico de lo procesado es útil.
 
 ---
 
 ## 5. Formato de archivos
 
-### Misión (proyecto)
-
-```markdown
----
-tags: [planeta, nombre-mision]
----
-
-# Nombre de la misión
-
-## Aclarador
-(Prosa libre: situación actual, contexto, dependencias, reflexiones)
-
-## Tareas
-
-- [ ] Tarea pendiente 📅 2026-04-18
-- [ ] Tarea esperando algo ⏳
-- [x] Tarea completada ✅
-
-## Notas
-(Espacio libre)
-```
-
-### Convenciones de tareas
-
-| Elemento | Significado | Ejemplo |
-|---|---|---|
-| `- [ ]` | Tarea pendiente | `- [ ] Hacer testing` |
-| `- [x]` | Tarea completada | `- [x] Implementar filtro ✅` |
-| `📅 YYYY-MM-DD` | Fecha de la tarea (leída por Dataview, CardBoard, Full Calendar) | `📅 2026-04-18` |
-| `⏳` | Esperando respuesta/dependencia | `Exportación de Gabriela ⏳` |
-| `✅` | Marcador visual de completado | (opcional, refuerza visualmente) |
-
-**Formato de fechas (formato único):**
-Las tareas con fecha usan UN solo formato: `📅 YYYY-MM-DD`. Este formato es leído automáticamente por Dataview, CardBoard y Full Calendar.
-
-El formato legible `(DD-mes-AAAA)` fue eliminado el 2026-04-17 porque generaba doble trabajo al editar fechas manualmente — el usuario cambiaba `📅 YYYY-MM-DD` y se olvidaba del paréntesis, o viceversa. El emoji 📅 es suficiente marcador visual.
-
-Ejemplo completo: `- [ ] Testear formulario 📅 2026-04-15`
-
----
-
-## 6. Estructura del vault
-
-```
-gestiono-mi-vida/
-├── README.md                         ← Descripción del proyecto y glosario
-├── universo.md                       ← Dashboard global
-├── evolucion.md                      ← Registro de mejoras y problemas del sistema
-│
-├── skill/                            ← 🎯 Instrucciones para el agente IA
-│   └── control-de-mision.md          ← Este archivo
-│
-├── enter-tech-school/                ← 🪐 Trabajo
-│   ├── README.md
-│   ├── _mapa-estelar.md
-│   └── [misiones].md
-│
-├── mis-proyectos-dev/                ← 🪐 Proyectos personales
-│   ├── README.md
-│   ├── _mapa-estelar.md
-│   └── [misiones].md
-│
-├── mis-sistemas-identidad/           ← 🪐 Sistemas / Hábitos
-│   ├── README.md
-│   ├── _mapa-estelar.md
-│   └── [misiones].md
-│
-├── nebulosa-mental/                  ← 🌫️ Tareas dispersas
-│   ├── README.md
-│   ├── _mapa-estelar.md
-│   └── destellos.md
-│
-├── aclarador-diario/                 ← 📓 Reflexiones diarias
-│   ├── README.md
-│   └── [YYYY-MM-DD].md
-│
-├── context/                          ← 📜 Documentos fundacionales
-│   ├── yo.md
-│   └── contexto-inicial-gestion.md
-│
-└── _plantillas/                      ← Plantillas
-    ├── plantilla-mision.md
-    └── plantilla-aclarador.md
-```
-
----
-
-## 7. Plugins de Obsidian del sistema
-
-El vault usa estos plugins para visualización. El agente IA NO depende de ellos — opera directamente sobre los archivos .md. Los plugins son la capa visual de Obsidian.
-
-| Plugin | Función | Notas |
-|---|---|---|
-| **Dataview** | Queries en dashboards (universo.md, mapas estelares). Lee `📅 YYYY-MM-DD` como fecha `due`. | Las queries están en bloques ` ```dataview ``` `. El agente puede editarlas. |
-| **CardBoard** | Vista Kanban de tareas. Lee `- [ ]` de los archivos .md. | Completar en el tablero actualiza el archivo. |
-| **Full Calendar** | Vista calendario de tareas del vault por fecha. | Complementa a Google Calendar (que muestra eventos externos). |
-| **Google Calendar** | Muestra Google Calendar dentro de Obsidian. | Para ver tareas de ClickUp y reuniones. Plugin en modo "stale" — funcional pero sin mantenimiento activo. |
-| **Minimal (tema)** | Tema visual limpio y profesional. | Acompañado de Style Settings para personalización. |
-| **Style Settings** | Panel de personalización visual del tema. | Sin código, solo ajustes visuales. |
-
-**Plugins eliminados:**
-- ~~Tasks (Clare Macrae)~~ — Reemplazado por Dataview (queries más potentes) + CardBoard (vista visual).
-
----
-
-## 8. Recordatorio final
-
-Este sistema existe para **quitarle peso mental a Erick**, no para agregárselo. Si en algún momento el sistema se siente como una carga, algo está mal y hay que simplificarlo. La estructura se adapta a él, no al revés.
+El sistema usa una jerarquía de 4 niveles: **

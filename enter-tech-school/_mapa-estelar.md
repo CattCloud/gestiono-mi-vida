@@ -6,11 +6,11 @@ Todo lo que está pasando en mi trabajo.
 
 ## Misiones activas
 
-- [[app-enterbase]]
-- [[instructor-code101n20]]
-- [[desarrollo-cursos]]
-- [[migracion-blackboard]]
-- [[integracion-kommo]]
+- [[app-enterbase/_aclarador|🎯 App Enterbase]]
+- [[instructor-code101n20/_aclarador|🎯 Instructor Code 101 N20]]
+- [[desarrollo-cursos/_aclarador|🎯 Desarrollo de cursos]]
+- [[migracion-blackboard/_aclarador|🎯 Migración a Blackboard]]
+- [[integracion-kommo/_aclarador|🎯 Integración con Kommo]]
 
 ---
 
@@ -27,16 +27,4 @@ SORT due ASC
 
 ```dataview
 TASK
-FROM "enter-tech-school"
-WHERE !completed AND contains(text, "⏳")
-SORT text ASC
-```
-
-## ✅ Completadas recientemente
-
-```dataview
-TASK
-FROM "enter-tech-school"
-WHERE completed
-SORT text ASC
-```
+FROM "enter

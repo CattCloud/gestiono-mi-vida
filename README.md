@@ -17,35 +17,37 @@ Sistema de gestión de tareas y vida personal construido en Obsidian, sincroniza
 | **Nebulosa mental** | Tareas sueltas que aún no tienen planeta definido |
 | **Destellos** | Ideas o tareas que aparecen de repente y hay que capturar |
 | **Control de Misión** | Skill/instrucciones para que un agente IA opere este sistema |
-| **Evolución** | Registro de mejoras, problemas e ideas que surgen durante el uso |
+| **Notas** | Cuaderno de captura rápida: modificaciones a tareas, ideas de mejora y nebulosa sin categoría. Se procesa por lotes. |
 
 ---
 
 ## Estructura
 
+Jerarquía de 4 niveles: **Planeta → Misión → Sub-misión (opcional) → Tarea**. Cada misión y cada sub-misión es una carpeta con un `_aclarador.md` adentro. Cada tarea es un `.md` propio con frontmatter rico.
+
 ```
 gestiono-mi-vida/
 ├── README.md                    ← Este archivo
 ├── universo.md                  ← Dashboard global
-├── evolucion.md                 ← Registro de mejoras, problemas e ideas para el sistema
+├── notas.md                     ← Captura rápida (modificaciones, ideas, nebulosa)
 │
 ├── skill/                       ← 🎯 Instrucciones para el agente IA
 │   └── control-de-mision.md
 │
-├── enter-tech-school/           ← 🪐 Trabajo en Enter Tech School
+├── enter-tech-school/           ← 🪐 Planeta (trabajo)
 │   ├── README.md
 │   ├── _mapa-estelar.md
-│   └── [misiones].md
+│   ├── app-enterbase/           ← 🎯 Misión (carpeta)
+│   │   ├── _aclarador.md        ← Aclarador de la misión
+│   │   ├── formulario-matriculados/   ← 📂 Sub-misión
+│   │   │   ├── _aclarador.md
+│   │   │   └── NN-tarea.md      ← 📄 Tarea secuencial
+│   │   └── tareas-sueltas/      ← Tareas de la misión sin sub-misión
+│   │       └── tarea.md
+│   └── [otras-misiones]/
 │
-├── mis-proyectos-dev/           ← 🪐 Proyectos de software personales
-│   ├── README.md
-│   ├── _mapa-estelar.md
-│   └── [misiones].md
-│
-├── mis-sistemas-identidad/      ← 🪐 Sistemas y hábitos de identidad
-│   ├── README.md
-│   ├── _mapa-estelar.md
-│   └── [misiones].md
+├── mis-proyectos-dev/           ← 🪐 Planeta (proyectos personales)
+├── mis-sistemas-identidad/      ← 🪐 Planeta (hábitos e identidad)
 │
 ├── nebulosa-mental/             ← 🌫️ Tareas dispersas sin área definida
 │   ├── README.md
@@ -62,6 +64,8 @@ gestiono-mi-vida/
 │
 └── _plantillas/                 ← Plantillas reutilizables
     ├── plantilla-mision.md
+    ├── plantilla-sub-mision.md
+    ├── plantilla-tarea.md
     └── plantilla-aclarador.md
 ```
 
@@ -78,33 +82,17 @@ gestiono-mi-vida/
 
 ## Cómo funciona
 
-1. Cada proyecto vive en un solo archivo (misión) dentro de su planeta.
-2. Cada misión tiene un **aclarador** (contexto en prosa) + **tareas** (`- [ ]`).
-3. El **universo.md** muestra todas las tareas pendientes de todos los planetas.
-4. Cada planeta tiene un **_mapa-estelar.md** que muestra solo las tareas de esa área.
-5. Las tareas que surgen sin contexto van a **nebulosa-mental/destellos.md**.
-6. Un agente IA lee **control-de-mision.md** al inicio de cada chat para entender el sistema y operar sobre los archivos.
+1. Cada proyecto vive en una **carpeta** (misión) dentro de su planeta, con un `_aclarador.md` que contiene su contexto.
+2. Dentro de una misión pueden existir **sub-misiones** (carpetas con su propio `_aclarador.md`) que agrupan tareas relacionadas.
+3. Cada **tarea** es un `.md` propio con frontmatter (peso, estado, fechas, dependencias) + 4 secciones: Detalle, Contexto para la IA, Notas, Tarea (CardBoard).
+4. Las tareas que no caen en una sub-misión viven en `[mision]/tareas-sueltas/`.
+5. El **universo.md** muestra todas las tareas pendientes de todos los planetas.
+6. Cada planeta tiene un **_mapa-estelar.md** que lista sus misiones activas.
+7. Las tareas que surgen sin contexto van a **nebulosa-mental/destellos.md**.
+8. Un agente IA lee **skill/control-de-mision.md** al inicio de cada chat para entender el sistema y operar sobre los archivos.
 
 ## Flujo de interacción
 
 - **Obsidian** es la interfaz de lectura: dashboards, filtros, navegación visual.
 - **Cowork / agente IA** es la interfaz de escritura: le hablas en lenguaje natural y el agente crea, edita, completa y mueve tareas en los archivos.
-- El agente siempre confirma antes de modificar archivos.
-
----
-
-## Filosofía
-
-- Las herramientas se adaptan a cómo pienso, no al revés.
-- Contexto y tareas conviven juntos, nunca separados.
-- Empezar simple, escalar cuando haga falta.
-- Sin categorías complejas, sin nomenclatura rígida.
-- Los archivos .md son míos — funcionan con o sin Obsidian.
-- El sistema existe para quitarme peso mental, no para agregarlo.
-
-## Plugins de Obsidian
-
-- **Dataview** (esencial) — Renderiza las queries en universo.md y los mapas estelares como vistas vivas de tareas. Reemplaza al plugin Tasks con queries más potentes.
-- **CardBoard** (esencial) — Vista Kanban/Date de tareas. Lee los `- [ ]` de los archivos y los muestra como tarjetas en columnas por fecha o estado.
-- **Shimmering Focus** (tema) — Tema visual limpio con enfoque en la escritura sin distracciones.
-- **Templater** (opcional) — Para crear misiones desde plantilla con un click.
+- El agente siempre confirma ante
