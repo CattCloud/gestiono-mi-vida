@@ -8,6 +8,9 @@ Todo lo que está pasando en mi trabajo.
 
 - [[app-enterbase]]
 - [[instructor-code101n20]]
+- [[desarrollo-cursos]]
+- [[migracion-blackboard]]
+- [[integracion-kommo]]
 
 ---
 

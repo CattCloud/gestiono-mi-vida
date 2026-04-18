@@ -9,10 +9,13 @@ Soy instructor del curso Code101 sección N20 (desarrollo web) en Enter Tech Sch
 
 ## Tareas
 
-- [ ] Generar infografía de la clase 1 y enviarla por el grupo de WhatsApp (14-abr-2026) 📅 2026-04-14
-- [ ] Generar infografía de la clase 2 y enviarla por el grupo de WhatsApp (14-abr-2026) 📅 2026-04-14
-- [ ] Generar la clase 4 (14-abr-2026) 📅 2026-04-14
-- [ ] Practicar la clase 4 (15-abr-2026) 📅 2026-04-15
+- [x] Generar infografía de la clase 1 y enviarla por el grupo de WhatsApp 📅 2026-04-14 ✅ 2026-04-15
+- [x] Generar infografía de la clase 2 y enviarla por el grupo de WhatsApp 📅 2026-04-14 ✅ 2026-04-15
+- [x] Generar la clase 4 📅 2026-04-14 ✅ 2026-04-15
+- [x] Practicar la clase 4 📅 2026-04-15 ✅ 2026-04-16
+- [x] Generar infografía de la clase 3 📅 2026-04-16 ✅ 2026-04-16
+- [x] Generar infografía de la clase 4 📅 2026-04-16 ✅ 2026-04-16
+- [x] Enviar infografías de clase 3 y 4 por el grupo de WhatsApp 📅 2026-04-16 ✅ 2026-04-16
 
 ## Notas
 

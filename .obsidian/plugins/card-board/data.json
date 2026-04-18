@@ -72,13 +72,6 @@
       {
         "columns": [
           {
-            "tag": "undated",
-            "data": {
-              "collapsed": false,
-              "name": "Sin fecha"
-            }
-          },
-          {
             "tag": "dated",
             "data": {
               "collapsed": false,
@@ -112,6 +105,13 @@
                 "tag": "after",
                 "data": 1
               }
+            }
+          },
+          {
+            "tag": "undated",
+            "data": {
+              "collapsed": false,
+              "name": "Sin fecha"
             }
           },
           {
@@ -217,7 +217,7 @@
       "filters": [],
       "firstDayOfWeek": "FromLocale",
       "ignoreFileNameDates": false,
-      "taskCompletionFormat": "ObsidianCardBoard",
+      "taskCompletionFormat": "ObsidianTasks",
       "taskCompletionInLocalTime": true,
       "taskCompletionShowUtcOffset": true
     }

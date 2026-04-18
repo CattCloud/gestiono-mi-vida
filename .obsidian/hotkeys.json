@@ -16,5 +16,14 @@
       ],
       "key": "C"
     }
+  ],
+  "theme:switch": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "X"
+    }
   ]
 }
