@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "10d4c0fa6cdd1108",
+        "id": "78ad053a81db49f2",
         "type": "tabs",
         "children": [
           {
-            "id": "a80db482a8f52151",
+            "id": "451a8b64f9728e32",
             "type": "leaf",
             "state": {
               "type": "card-board-view",
@@ -16,8 +16,23 @@
               "icon": "card-board",
               "title": "CardBoard"
             }
+          },
+          {
+            "id": "2ac404119e1fc769",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "skill/control-de-mision.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "control-de-mision"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -49,7 +64,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#formulario-matriculados",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -90,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "enter-tech-school/app-enterbase.md",
+                "file": "_prueba-estructura/v2-unificado/app-enterbase/tareas-sueltas/limpiar-logs-staging.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +115,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Enlaces entrantes de app-enterbase"
+              "title": "Enlaces entrantes de limpiar-logs-staging"
             }
           },
           {
@@ -180,45 +195,39 @@
       "card-board:CardBoard": false
     }
   },
-  "active": "a80db482a8f52151",
+  "active": "2ac404119e1fc769",
   "lastOpenFiles": [
-    "enter-tech-school/instructor-code101n20.md.tmp.23016.1776485092244",
-    "enter-tech-school/instructor-code101n20.md.tmp.23016.1776485091099",
-    "enter-tech-school/app-enterbase.md",
-    "enter-tech-school/migracion-blackboard.md",
-    "enter-tech-school/integracion-kommo.md",
-    "enter-tech-school/desarrollo-cursos.md",
-    "enter-tech-school/instructor-code101n20.md",
-    "universo.md",
-    "README.md",
-    "enter-tech-school/_mapa-estelar.md",
-    "skill/control-de-mision.md",
-    "enter-tech-school/README.md",
-    "Sin título.canvas",
-    "enter-tech-school/app-enterbase.md.tmp.7256.1776211932941",
-    "README.md.tmp.25560.1776182644213",
-    "2026-04-14.md",
-    "Sin título.base",
-    "Sin título 1.base",
-    "context/guia-instalacion-plugins.md",
-    "nebulosa-mental/_mapa-estelar.md.tmp.16692.1776176184899",
-    "mis-sistemas-identidad/_mapa-estelar.md.tmp.16692.1776176179048",
-    "context/propuesta-plugins-visuales.md",
-    "evolucion.md",
-    "skill/control-de-mision.md.tmp.21772.1776174335216",
-    "context/yo.md",
-    "context/contexto-inicial-gestion.md",
-    "context/propuesta-estructura.md",
-    "context/propuesta-skill-automatizacion.md",
-    "README.md.tmp.15188.1776058772291",
-    "skill",
-    "_plantillas/plantilla-mision.md",
-    "nebulosa-mental/_mapa-estelar.md",
-    "mis-sistemas-identidad/_mapa-estelar.md",
-    "mis-proyectos-dev/_mapa-estelar.md",
+    "notas.md",
+    "skill/control-de-mision.md.tmp.28176.1776620164514",
+    "skill/control-de-mision.md.tmp.28176.1776620155137",
+    "aclarador-diario/README.md",
+    "skill/control-de-mision.md.tmp.28176.1776620146577",
+    "_plantillas/plantilla-sub-mision.md",
     "_plantillas/plantilla-aclarador.md",
-    "nebulosa-mental/destellos.md",
-    "nebulosa-mental/README.md",
-    "Sin título 1.canvas"
-  ]
-}
+    "_plantillas/plantilla-mision.md",
+    "_plantillas/plantilla-tarea.md",
+    "_prueba-estructura/v2-unificado/_plantillas/plantilla-tarea.md",
+    "_prueba-estructura/v2-unificado/app-enterbase/_aclarador.md",
+    "_prueba-estructura/v2-unificado/app-enterbase/tareas-sueltas/limpiar-logs-staging.md",
+    "_prueba-estructura/v2-unificado/app-enterbase/formulario-matriculados/03-deploy-produccion.md",
+    "_prueba-estructura/v2-unificado/app-enterbase/formulario-matriculados/02-esperar-aprobacion-bruno.md",
+    "_prueba-estructura/v2-unificado/app-enterbase/formulario-matriculados/01-generar-doc-bd.md",
+    "enter-tech-school/_mapa-estelar.md",
+    "enter-tech-school/desarrollo-cursos/code-101-onboarding/_aclarador.md",
+    "enter-tech-school/desarrollo-cursos/code-101-onboarding/01-solicitar-acceso-bruno.md",
+    "enter-tech-school/app-enterbase/_aclarador.md",
+    "enter-tech-school/integracion-kommo/_aclarador.md",
+    "enter-tech-school/instructor-code101n20/_aclarador.md",
+    "enter-tech-school/_mapa-estelar.md.tmp.13500.1776525642567",
+    "enter-tech-school/instructor-code101n20.md",
+    "skill/control-de-mision.md.tmp.11184.1776525208131",
+    "enter-tech-school/migracion-blackboard/tareas-sueltas/leer-manual-api.md",
+    "enter-tech-school/migracion-blackboard/tareas-sueltas/leer-manual-api.md.tmp.11184.1776525130968",
+    "enter-tech-school/migracion-blackboard/tareas-sueltas/reunion-nicolas.md",
+    "enter-tech-school/migracion-blackboard/tareas-sueltas/preparar-reunion-lunes.md",
+    "enter-tech-school/migracion-blackboard/tareas-sueltas/reunion-luigi.md",
+    "enter-tech-school/migracion-blackboard/tareas-sueltas/generar-doc-api-lenguaje-sencillo.md",
+    "enter-tech-school/migracion-blackboard/tareas-sueltas/revisar-api-blackboard.md",
+    "enter-tech-school/migracion-blackboard/tareas-sueltas",
+    "enter-tech-school/migracion-blackboard",
+    "enter-tech-school/integracion-kommo/tar

@@ -1,0 +1,20 @@
+/*
+ * Oculta la fila de tags que aparece arriba de cada tarjeta de CardBoard.
+ *
+ * Por qué: CardBoard muestra TODOS los tags del archivo (del frontmatter y
+ * de la línea de la tarea) encima de cada tarjeta. Los toggles del plugin
+ * ("Show filter tags on cards" / "Show column tags on cards") solo ocultan
+ * los tags que cumplen esos roles — los organizacionales como
+ * #enter-tech-school, #app-enterbase, etc. siempre se muestran.
+ *
+ * Este snippet oculta la fila completa. Los tags siguen vivos en el archivo
+ * y siguen alimentando los Tag boards y las queries de Dataview; solo se
+ * esconden visualmente dentro de CardBoard.
+ *
+ * Si en algún momento quieres ver los tags en una tarjeta, desactiva este
+ * snippet temporalmente desde Settings → Appearance → CSS snippets.
+ */
+
+.card-board-view .card-board-card-tag-area {
+  display: none !important;
+}
