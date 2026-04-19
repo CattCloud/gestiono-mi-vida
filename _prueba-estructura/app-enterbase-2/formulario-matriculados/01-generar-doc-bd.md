@@ -3,9 +3,9 @@ tags:
   - enter-tech-school
   - app-enterbase
   - formulario-matriculados
-  - completada
+  - tarea-pesada
 tipo: tarea
-peso: 3
+estado: completada
 fecha_tipo: exacta
 fecha_inicio: 2026-04-16
 fecha_fin:
@@ -30,13 +30,11 @@ Esto surge del incidente del 15-abr-2026, cuando el deploy falló porque no se c
 
 **Stack relevante:** Next.js + Prisma + PostgreSQL. Las migraciones viven en `prisma/migrations/`. El PR que se revirtió estaba en la rama `feature/formulario-matriculados-v2`.
 
-**Por qué peso 3:** aunque parece "solo redactar un doc", implica repasar las migraciones, identificar cada cambio, explicarlo de forma no-técnica, y preparar ejemplos. Tiene complejidad oculta.
-
 ## Notas
 
-- Documento terminado el 16-abr a las 9:34 AM.
-- Guardado en Drive, pendiente solo enviárselo a Bruno (eso pasa a la tarea 02).
+- El documento lo terminé el 16-abr a las 9:34 AM.
+- Quedó guardado en Drive, pendiente solo enviárselo a Bruno (eso pasa a la tarea 02).
 
 ## Tarea (CardBoard)
 
-- [x] 🟠 Generar documento breve con los cambios de BD para facilitar la decisión de Bruno 📅 2026-04-16 ✅ 2026-04-16
+- [x] Generar documento breve con los cambios de BD para facilitar la decisión de Bruno 📅 2026-04-16 ✅ 2026-04-16

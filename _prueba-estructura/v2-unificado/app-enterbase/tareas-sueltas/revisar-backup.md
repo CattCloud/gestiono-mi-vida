@@ -2,9 +2,9 @@
 tags:
   - enter-tech-school
   - app-enterbase
+  - pendiente
 tipo: tarea
 peso: 1
-estado: pendiente
 fecha_tipo: exacta
 fecha_inicio: 2026-04-20
 fecha_fin:

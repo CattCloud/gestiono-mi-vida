@@ -3,9 +3,9 @@ tags:
   - enter-tech-school
   - app-enterbase
   - formulario-matriculados
-  - bloqueada
+  - tarea-pesada
 tipo: tarea
-peso: 3
+estado: bloqueada
 fecha_tipo: rango
 fecha_inicio: 2026-04-22
 fecha_fin: 2026-04-25
@@ -26,7 +26,7 @@ Una vez aprobado el acceso por Bruno, hacer el deploy del formulario de matricul
 2. Esperar aprobación del PR
 3. **Antes del merge**, correr `npx prisma migrate deploy` en producción
 4. Merge del PR
-5. Validar que la app no cayó (esta vez sí, no como el 15-abr)
+5. Validar que la app no cayó (esta vez sí, no como el 15-abr 😅)
 6. Avisar a Gaby para que pruebe el formulario en producción
 
 ## Contexto para la IA
@@ -37,8 +37,6 @@ El deploy anterior (15-abr-2026) falló porque se hizo el merge sin correr la mi
 
 **Ventana de deploy:** entre el 22 y 25 de abril. Se puede hacer cualquier día en ese rango, pero idealmente en la mañana por si hay que revertir.
 
-**Por qué peso 3:** tiene subtareas secuenciales, dependencia de Bruno, y es del tipo "cosas que suelen complicarse" (ya pasó una vez). Naturaleza impredecible.
-
 ## Notas
 
 - Tener a mano el rollback listo por si acaso.
@@ -46,4 +44,4 @@ El deploy anterior (15-abr-2026) falló porque se hizo el merge sin correr la mi
 
 ## Tarea (CardBoard)
 
-- [ ] 🟠 Deploy de formulario de matriculados a producción (correr `npx prisma migrate deploy` antes del merge) 📅 2026-04-22
+- [ ] Deploy de formulario de matriculados a producción (correr `npx prisma migrate deploy` antes del merge) 📅 2026-04-22

@@ -2,9 +2,9 @@
 tags:
   - enter-tech-school
   - integracion-kommo
+  - en-espera
 tipo: tarea
 peso: 2
-estado: en-espera
 fecha_tipo: sin-fecha
 fecha_inicio:
 fecha_fin:

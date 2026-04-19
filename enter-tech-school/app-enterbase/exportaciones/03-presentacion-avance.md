@@ -3,9 +3,9 @@ tags:
   - enter-tech-school
   - app-enterbase
   - exportaciones
+  - completada
 tipo: tarea
 peso: 2
-estado: completada
 fecha_tipo: exacta
 fecha_inicio: 2026-04-15
 fecha_fin:

@@ -2,9 +2,9 @@
 tags:
   - enter-tech-school
   - app-enterbase
+  - en-espera
 tipo: tarea
 peso: 2
-estado: en-espera
 fecha_tipo: sin-fecha
 fecha_inicio:
 fecha_fin:
@@ -32,4 +32,4 @@ Los logs viven en `/var/log/enterbase-staging/`. Hay un script `clean-old-logs.s
 
 ## Tarea (CardBoard)
 
-- [ ] 🟡 Limpiar logs viejos del servidor staging ⏳
+- [x] 🟡 Limpiar logs viejos del servidor staging ⏳ ✅ 2026-04-19

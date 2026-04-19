@@ -1,6 +1,6 @@
 {
   "accentColor": "#ffffff",
-  "cssTheme": "Shimmering Focus",
+  "cssTheme": "",
   "baseFontSize": 17,
   "interfaceFontFamily": "Calibri",
   "textFontFamily": "Calibri",
@@ -8,5 +8,8 @@
   "theme": "moonstone",
   "nativeMenus": true,
   "showRibbon": true,
-  "showViewHeader": false
+  "showViewHeader": false,
+  "enabledCssSnippets": [
+    "cardboard-hide-tags"
+  ]
 }

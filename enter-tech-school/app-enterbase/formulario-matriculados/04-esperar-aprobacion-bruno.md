@@ -3,9 +3,9 @@ tags:
   - enter-tech-school
   - app-enterbase
   - formulario-matriculados
+  - en-espera
 tipo: tarea
 peso: 2
-estado: en-espera
 fecha_tipo: sin-fecha
 fecha_inicio:
 fecha_fin:

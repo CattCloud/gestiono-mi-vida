@@ -3,9 +3,9 @@ tags:
   - enter-tech-school
   - app-enterbase
   - formulario-matriculados
+  - bloqueada
 tipo: tarea
 peso: 2
-estado: bloqueada
 fecha_tipo: sin-fecha
 fecha_inicio:
 fecha_fin:

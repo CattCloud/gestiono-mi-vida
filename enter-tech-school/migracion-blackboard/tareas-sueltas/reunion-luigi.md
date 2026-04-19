@@ -2,9 +2,9 @@
 tags:
   - enter-tech-school
   - migracion-blackboard
+  - completada
 tipo: tarea
 peso: 2
-estado: completada
 fecha_tipo: exacta
 fecha_inicio: 2026-04-17
 fecha_fin:

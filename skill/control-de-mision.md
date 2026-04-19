@@ -101,7 +101,13 @@ El usuario te va a hablar en prosa. Cada tarea en este vault es **un archivo .md
 5. Para cada tarea, **preguntar el peso (1/2/3)** salvo que sea obvio por el contexto (ver escala abajo). Si propones un peso, justifícalo brevemente.
 6. Proponer los cambios y esperar confirmación.
 7. Crear el archivo de la tarea usando `_plantillas/plantilla-tarea.md` como base, con su frontmatter y sus 4 secciones (Detalle, Contexto para la IA, Notas, Tarea CardBoard).
-8. Actualizar el `_aclarador.md` de la misión/sub-misión agregando el enlace a la tarea nueva.
+8. **Añadir el tag de estado** en `tags:` según corresponda, y **reflejarlo con el marcador correcto en la línea CardBoard del mismo archivo**. Tag y marcador van siempre juntos:
+   - `#pendiente` por defecto, si está lista para trabajar. Línea CardBoard: solo texto + `📅 YYYY-MM-DD` si tiene fecha. Sin emoji de estado.
+   - `#en-espera` si nace esperando algo externo (respuesta de alguien, entrega, etc.). Línea CardBoard: agregar `⏳` al final del texto.
+   - `#bloqueada` si depende de otra tarea no completada (llenar `bloqueada_por`). Línea CardBoard: agregar `🔒` al final del texto.
+
+   **Regla:** nunca crees una tarea `#bloqueada` sin `🔒` en la línea, ni una `#en-espera` sin `⏳`. El barrido §4.11 detecta estas desincronizaciones, pero al crear la tarea es tu responsabilidad dejarlas alineadas desde el inicio.
+9. Actualizar el `_aclarador.md` de la misión/sub-misión agregando el enlace a la tarea nueva.
 
 **Escala de pesos:**
 
@@ -138,11 +144,11 @@ El emoji de peso va **al inicio** del texto, justo después de `[ ]`, porque Car
 1. Busca la tarea en el vault (usa el texto que el usuario mencione para localizarla). Recuerda: cada tarea es su propio .md, típicamente bajo una sub-misión o en `tareas-sueltas/`.
 2. Propón el cambio: "Voy a marcar [tarea] como completada en [ruta/del/archivo.md] y actualizar el aclarador."
 3. Tras confirmación:
-   - En el frontmatter: cambiar `estado: pendiente` (o el que tuviera) a `estado: completada`, y agregar `fecha_completado: YYYY-MM-DD`.
+   - En el frontmatter `tags:` reemplazar el tag de estado anterior (`pendiente`, `en-espera` o `bloqueada`) por `completada`, y llenar `fecha_completado: YYYY-MM-DD`.
    - En la línea de CardBoard: cambiar `- [ ]` a `- [x]` y agregar `✅ YYYY-MM-DD` al final.
    - Si estaba con `⏳`, quitarlo.
    - Actualizar el `_aclarador.md` de la misión/sub-misión reflejando el avance (cambiar el emoji de estado en el listado de tareas).
-4. Si la tarea tenía `desbloquea: [otra-tarea]` en su frontmatter, revisar si la otra tarea debería pasar de `bloqueada` a `pendiente` y proponerlo al usuario.
+4. Si la tarea tenía `desbloquea: [otra-tarea]` en su frontmatter, revisar si la otra tarea debería cambiar su tag de `#bloqueada` a `#pendiente` y proponerlo al usuario.
 
 ---
 
@@ -252,12 +258,23 @@ Erick marca muchas tareas con `[x]` rápidamente desde el tablero de CardBoard o
 
 3. **Tareas marcadas `[x]` sin ✅ fecha.** Cuando Erick marca manualmente `[x]` no siempre agrega `✅ fecha`. Esto no es urgente corregirlo, pero vale mencionarlo si hay muchas acumuladas.
 
+4. **Tag de estado desincronizado con la línea CardBoard.** El tag de estado del frontmatter (`#pendiente` / `#en-espera` / `#bloqueada` / `#completada`) debería estar alineado con la línea de CardBoard del mismo archivo. Casos a detectar:
+   - Línea `- [x]` pero tag sigue en `#pendiente` → el tag debería ser `#completada`.
+   - Línea con `⏳` pero tag es `#pendiente` → el tag debería ser `#en-espera`.
+   - Línea con `🔒` pero tag es `#pendiente` → el tag debería ser `#bloqueada`.
+   - Línea sin `⏳` ni `🔒` ni `[x]` pero tag es `#en-espera` / `#bloqueada` / `#completada` → revisar con el usuario qué es lo correcto.
+
+5. **Tareas `#bloqueada` con dependencias ya completadas.** Una tarea con tag `#bloqueada` cuyo `bloqueada_por` lista archivos que ya están todos `#completada` debería haber pasado a `#pendiente` y perdido su `🔒`. Esto pasa cuando Erick marca una tarea A como completada desde CardBoard sin abrir chat, y la tarea B que dependía de A queda "huérfana" en estado bloqueada. Patrón: `tag = bloqueada` + todas las entradas de `bloqueada_por` apuntan a archivos con `tag = completada`.
+
 **Cómo actuar:**
 
 1. Ejecuta el barrido al iniciar la conversación, en silencio (no muestres los comandos).
 2. Si no hay inconsistencias, no digas nada — el sistema está limpio.
 3. Si encuentras 1–3 inconsistencias, menciónalas brevemente después del saludo:
    > "Por cierto, vi 2 tareas con ⏳ residual y 1 con formato viejo. ¿Las limpio antes de seguir?"
+
+   Para el caso específico de tareas bloqueadas con dependencias cumplidas, el aviso es más concreto porque hay acción natural que sugerir:
+   > "Por cierto, detecté que `02-redactar-doc` sigue como bloqueada pero su dependencia `01-investigar` ya está completada. ¿La paso a pendiente?"
 4. Si encuentras más de 3, ofrece limpiarlas todas de una:
    > "Detecté varias tareas con símbolos residuales de la semana. ¿Hago un barrido de limpieza ahora o seguimos?"
 5. **Nunca limpies sin confirmar**, aunque sean cambios menores. La regla de confirmación sigue aplicando.
@@ -269,6 +286,7 @@ Erick marca muchas tareas con `[x]` rápidamente desde el tablero de CardBoard o
 | `- [x] Tarea ⏳` | Quitar el ⏳ (sin reemplazar por nada) |
 | `- [x] Tarea 📅 YYYY-MM-DD @completed(YYYY-MM-DDTHH:MM:SS-05:00)` | Reemplazar `@completed(...)` por `✅ YYYY-MM-DD` (usa la fecha de `@completed`, no inventes) |
 | `- [x] Tarea` (sin fecha de completado) | No inventar fecha. Ofrecer al usuario agregarla o dejarla así. |
+| `#bloqueada` con todas sus `bloqueada_por` ya `#completada` | Tras confirmación del usuario: cambiar tag a `#pendiente`, quitar `🔒` de la línea CardBoard. Si la tarea desbloqueada tiene fecha prevista, dejarla; si no, no inventes fecha. |
 
 **Importante:** Si la tarea marcada `[x]` **no debería estar completada** (el usuario la marcó por error), no es tu trabajo detectarlo — confía en el check. Pero si el texto contradice el check (ej: "esperando a Bruno" marcada `[x]`), sí vale preguntar.
 
@@ -309,4 +327,253 @@ El usuario escribe ahí en **texto libre**, sin preocuparse por formato. Tu trab
 
 ## 5. Formato de archivos
 
-El sistema usa una jerarquía de 4 niveles: **
+El sistema usa una jerarquía de 4 niveles: **Planeta → Misión → Sub-misión (opcional) → Tarea**. Cada nivel tiene su propio formato.
+
+### 5.1 Misión — archivo `_aclarador.md` dentro de carpeta `[planeta]/[mision]/`
+
+```markdown
+---
+tags:
+  - [planeta]
+  - mision
+  - [nombre-mision]
+tipo: mision
+---
+
+# 🎯 Nombre de la misión
+
+## Aclarador
+(Prosa libre: situación actual, contexto, decisiones, reflexiones)
+
+## Sub-misiones activas
+- [[sub-mision-1/_aclarador|📂 Sub-misión 1]] — N tareas
+- [[sub-mision-2/_aclarador|📂 Sub-misión 2]] — N tareas
+
+## Tareas sueltas
+- [[tareas-sueltas/nombre-tarea|📄 Nombre de la tarea]] — peso N 🟡/🟣/🟠 [estado]
+
+## Notas
+(Espacio libre)
+```
+
+### 5.2 Sub-misión — archivo `_aclarador.md` dentro de carpeta `[planeta]/[mision]/[sub-mision]/`
+
+```markdown
+---
+tags:
+  - [planeta]
+  - [mision]
+  - sub-mision
+  - [nombre-sub-mision]
+tipo: sub-mision
+mision_padre: [nombre-mision]
+---
+
+# 📂 Nombre de la sub-misión
+
+## Aclarador
+(Prosa libre específica a esta sub-misión)
+
+## Tareas
+- [[01-nombre-tarea|📄 01 — Nombre de la tarea]] — peso N 🟡/🟣/🟠 [estado]
+
+## Notas
+```
+
+### 5.3 Tarea — archivo .md individual
+
+Cada tarea es su propio archivo con frontmatter rico + 4 secciones. Usar `_plantillas/plantilla-tarea.md` como punto de partida.
+
+```markdown
+---
+tags:
+  - [planeta]
+  - [mision]
+  - [sub-mision-si-aplica]
+  - pendiente | en-espera | bloqueada | completada   # tag de estado (uno solo)
+tipo: tarea
+peso: 1 | 2 | 3
+fecha_tipo: exacta | rango | deadline | sin-fecha
+fecha_inicio: YYYY-MM-DD
+fecha_fin: YYYY-MM-DD
+fecha_completado: YYYY-MM-DD
+orden: 1
+bloqueada_por:
+  - nombre-otra-tarea
+desbloquea:
+  - nombre-otra-tarea
+---
+
+# 📄 Título de la tarea
+
+## Detalle
+(Qué hay que hacer, con profundidad. Responde "¿qué implica esta tarea exactamente?")
+
+## Contexto para la IA
+(Historial, decisiones previas, stack técnico, personas, dependencias — todo lo que una IA necesitaría para ayudar con esta tarea sin tener que preguntarlo.)
+
+**Por qué peso N:** (Justificación del peso asignado)
+
+## Notas
+(Cosas sueltas: enlaces útiles, dudas, ideas que surgen.)
+
+## Tarea (CardBoard)
+
+- [ ] 🟡 Título corto para tablero 📅 YYYY-MM-DD
+```
+
+**Tag de estado (una tarea = un tag):**
+
+| Tag | Cuándo |
+|---|---|
+| `#pendiente` | Lista para trabajar. Sin bloqueos ni esperas externas. |
+| `#en-espera` | Esperando respuesta de alguien o condición externa (no otra tarea). |
+| `#bloqueada` | Esperando que se complete otra tarea (llenar `bloqueada_por`). |
+| `#completada` | Cerrada. Debe tener `fecha_completado`. |
+
+El tag de estado es **la única fuente de verdad**: alimenta los Tag boards de CardBoard y las queries de Dataview. No existe campo `estado:` en el frontmatter — se eliminó el 2026-04-19 para evitar dos fuentes desincronizadas.
+
+**Nota:** `#en-progreso` no existe hoy. Sin drag-and-drop en CardBoard sería solo ceremonia (editar frontmatter a mano para un cambio puramente visual). Ver `notas.md` → "Kanban real" para la etapa 2.
+
+### 5.4 Convenciones de tareas (línea CardBoard)
+
+El emoji de peso va **al inicio** del texto, justo después de `[ ]`, porque CardBoard trunca textos largos:
+
+| Situación | Línea en CardBoard |
+|---|---|
+| Pendiente con fecha exacta | `- [ ] 🟡 Texto 📅 2026-04-20` |
+| Pendiente con rango | `- [ ] 🟠 Texto 📅 2026-04-22` (fecha_inicio) |
+| En espera (⏳) | `- [ ] 🟣 Texto ⏳` |
+| Bloqueada por otra tarea | `- [ ] 🟠 Texto 🔒` |
+| Completada | `- [x] 🟡 Texto 📅 2026-04-20 ✅ 2026-04-20` |
+
+**Pesos:** 🟡 (1) amarillo · 🟣 (2) morado · 🟠 (3) naranja.
+
+**Formato único de fecha:** `📅 YYYY-MM-DD`. El formato legible `(DD-mes-AAAA)` fue eliminado el 2026-04-17 porque generaba doble trabajo al editar fechas.
+
+### 5.5 Tipos de fecha (`fecha_tipo`)
+
+| Tipo | Uso | Qué se llena |
+|---|---|---|
+| `exacta` | Se hace en un día específico | `fecha_inicio` |
+| `rango` | Se puede hacer entre X e Y días | `fecha_inicio` + `fecha_fin` |
+| `deadline` | Hay que terminarla antes de una fecha, sin día exacto de ejecución | `fecha_fin` |
+| `sin-fecha` | Esperando algo, o futura sin deadline | (vacío) |
+
+Cuando el contexto cambia (ej. "hay que tenerlo antes del 25"), actualizar `fecha_tipo` para que refleje la realidad actual.
+
+### 5.6 Dependencias secuenciales
+
+Para tareas que forman una secuencia, usar los campos `bloqueada_por` y `desbloquea` en el frontmatter:
+
+```yaml
+bloqueada_por:
+  - 02-esperar-aprobacion
+desbloquea:
+  - 04-deploy-produccion
+```
+
+Estos son declarativos: el agente los lee para saber qué orden sugerir y qué se destraba al completar una tarea. No hay automatización dura todavía.
+
+---
+
+## 6. Estructura del vault
+
+El vault organiza el trabajo en **4 niveles jerárquicos** representados como carpetas:
+
+**Planeta → Misión → Sub-misión (opcional) → Tarea**
+
+Cada misión y cada sub-misión es una carpeta con un `_aclarador.md` adentro. Cada tarea es un `.md` propio con frontmatter rico.
+
+```
+gestiono-mi-vida/
+├── README.md                         ← Descripción del proyecto y glosario
+├── universo.md                       ← Dashboard global
+├── notas.md                          ← Captura rápida (modificaciones, ideas, nebulosa)
+│
+├── skill/                            ← 🎯 Instrucciones para el agente IA
+│   └── control-de-mision.md          ← Este archivo
+│
+├── enter-tech-school/                ← 🪐 Planeta
+│   ├── README.md
+│   ├── _mapa-estelar.md              ← Índice del planeta con misiones activas
+│   │
+│   ├── app-enterbase/                ← 🎯 Misión (carpeta)
+│   │   ├── _aclarador.md             ← Aclarador de la misión
+│   │   ├── formulario-matriculados/  ← 📂 Sub-misión (carpeta)
+│   │   │   ├── _aclarador.md         ← Aclarador de la sub-misión
+│   │   │   ├── 01-cambiar-orden.md   ← 📄 Tarea (ordenada NN- si es secuencia)
+│   │   │   └── 02-testear.md
+│   │   ├── exportaciones/            ← 📂 Otra sub-misión
+│   │   │   ├── _aclarador.md
+│   │   │   └── ...
+│   │   └── tareas-sueltas/           ← Tareas de la misión que no caen en sub-misión
+│   │       └── nombre-tarea.md
+│   │
+│   └── migracion-blackboard/         ← 🎯 Otra misión (sin sub-misiones, solo sueltas)
+│       ├── _aclarador.md
+│       └── tareas-sueltas/
+│           └── ...
+│
+├── mis-proyectos-dev/                ← 🪐 Planeta
+│   ├── README.md
+│   ├── _mapa-estelar.md
+│   └── [misiones/]
+│
+├── mis-sistemas-identidad/           ← 🪐 Planeta
+│   ├── README.md
+│   ├── _mapa-estelar.md
+│   └── [misiones/]
+│
+├── nebulosa-mental/                  ← 🌫️ Tareas dispersas sin procesar
+│   ├── README.md
+│   ├── _mapa-estelar.md
+│   └── destellos.md
+│
+├── aclarador-diario/                 ← 📓 Reflexiones diarias
+│   ├── README.md
+│   └── [YYYY-MM-DD].md
+│
+├── context/                          ← 📜 Documentos fundacionales
+│   ├── yo.md
+│   └── contexto-inicial-gestion.md
+│
+└── _plantillas/                      ← Plantillas
+    ├── plantilla-mision.md           ← Para `_aclarador.md` de misión
+    ├── plantilla-sub-mision.md       ← Para `_aclarador.md` de sub-misión
+    ├── plantilla-tarea.md            ← Para cada tarea nueva
+    └── plantilla-aclarador.md        ← Para aclaradores diarios
+```
+
+**Reglas clave de la estructura:**
+
+- Cada **misión** vive en una carpeta bajo el planeta, con `_aclarador.md` adentro. El nombre de la carpeta es kebab-case (ej: `app-enterbase/`).
+- Las **sub-misiones** son carpetas dentro de la misión, también con `_aclarador.md`. Son opcionales: si una misión no tiene agrupaciones internas naturales, todas sus tareas van en `tareas-sueltas/`.
+- Las **tareas sueltas** (las que no pertenecen a una sub-misión) viven en `[mision]/tareas-sueltas/`.
+- Las **tareas secuenciales** dentro de una sub-misión se prefijan con `NN-` (ej: `01-investigar.md`, `02-redactar.md`, `03-reunion.md`) para reflejar el orden. Las tareas paralelas no necesitan prefijo.
+- El `_mapa-estelar.md` del planeta lista las misiones activas con enlaces a sus `_aclarador.md`.
+- Nunca hay `.md` de misión fuera de una carpeta (el formato antiguo `[mision].md` plano fue reemplazado el 2026-04-18).
+
+---
+
+## 7. Plugins de Obsidian del sistema
+
+El vault usa estos plugins para visualización. El agente IA NO depende de ellos — opera directamente sobre los archivos .md. Los plugins son la capa visual de Obsidian.
+
+| Plugin | Función | Notas |
+|---|---|---|
+| **Dataview** | Queries en dashboards (universo.md, mapas estelares). Lee `📅 YYYY-MM-DD` como fecha `due`. | Las queries están en bloques ` ```dataview ``` `. El agente puede editarlas. |
+| **CardBoard** | Vista Kanban de tareas. Lee `- [ ]` de los archivos .md. | Completar en el tablero actualiza el archivo. |
+| **Full Calendar** | Vista calendario de tareas del vault por fecha. | Complementa a Google Calendar (que muestra eventos externos). |
+| **Google Calendar** | Muestra Google Calendar dentro de Obsidian. | Para ver tareas de ClickUp y reuniones. Plugin en modo "stale" — funcional pero sin mantenimiento activo. |
+| **Minimal (tema)** | Tema visual limpio y profesional. | Acompañado de Style Settings para personalización. |
+| **Style Settings** | Panel de personalización visual del tema. | Sin código, solo ajustes visuales. |
+
+**Plugins eliminados:**
+- ~~Tasks (Clare Macrae)~~ — Reemplazado por Dataview (queries más potentes) + CardBoard (vista visual).
+
+---
+
+## 8. Recordatorio final
+
+Este sistema existe para **quitarle peso mental a Erick**, no para agregárselo. Si en algún momento el sistema se siente como una carga, algo está mal y hay que simplificarlo. La estructura se adapta a él, no al revés.

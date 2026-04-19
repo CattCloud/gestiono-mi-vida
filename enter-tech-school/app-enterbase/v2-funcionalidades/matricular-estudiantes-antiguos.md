@@ -3,9 +3,9 @@ tags:
   - enter-tech-school
   - app-enterbase
   - v2-funcionalidades
+  - en-espera
 tipo: tarea
 peso: 3
-estado: en-espera
 fecha_tipo: deadline
 fecha_inicio:
 fecha_fin: 2026-05-31
@@ -43,4 +43,4 @@ Es uno de los pilares de la decisión "los datos personales se registran UNA vez
 
 ## Tarea (CardBoard)
 
-- [ ] 🟠 Matricular estudiantes antiguos: formulario corto (curso + inscripción + pago) 📅 2026-05-31
+- [ ] 🟠 Matricular estudiantes antiguos: formulario corto (curso + inscripción + pago) 📅 2026-05-31 ⏳

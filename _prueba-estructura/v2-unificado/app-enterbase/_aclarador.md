@@ -26,6 +26,8 @@ Tareas que pertenecen a la misión general pero no encajan en una sub-misión. V
 - [[tareas-sueltas/revisar-backup|Revisar backup semanal]] — peso 1 🟡
 - [[tareas-sueltas/limpiar-logs-staging|Limpiar logs viejos de staging]] — peso 1 🟡
 
+---
+
 ## Notas generales
 
 - Prioridad post-descargables acordada con Mhitzy:

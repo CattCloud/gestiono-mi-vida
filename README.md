@@ -95,4 +95,23 @@ gestiono-mi-vida/
 
 - **Obsidian** es la interfaz de lectura: dashboards, filtros, navegación visual.
 - **Cowork / agente IA** es la interfaz de escritura: le hablas en lenguaje natural y el agente crea, edita, completa y mueve tareas en los archivos.
-- El agente siempre confirma ante
+- El agente siempre confirma antes de modificar archivos.
+
+---
+
+## Filosofía
+
+- Las herramientas se adaptan a cómo pienso, no al revés.
+- Contexto y tareas conviven juntos, nunca separados.
+- Empezar simple, escalar cuando haga falta.
+- Sin categorías complejas, sin nomenclatura rígida.
+- Los archivos .md son míos — funcionan con o sin Obsidian.
+- El sistema existe para quitarme peso mental, no para agregarlo.
+
+## Plugins de Obsidian
+
+- **Dataview** (esencial) — Renderiza las queries en universo.md y los mapas estelares como vistas vivas de tareas. Reemplaza al plugin Tasks con queries más potentes.
+- **CardBoard** (esencial) — Vista Kanban/Date de tareas. Lee los `- [ ]` de los archivos y los muestra como tarjetas en columnas por fecha o estado.
+- **Full Calendar** (esencial) — Vista calendario de las tareas del vault por fecha, complementaria a Google Calendar.
+- **Google Calendar** — Muestra Google Calendar dentro de Obsidian (tareas de ClickUp, reuniones). Plugin en modo "stale" pero funcional.
+- **Minimal (tema) + Style Settings** — Tema visual limpio y profesional, personalizable sin código.

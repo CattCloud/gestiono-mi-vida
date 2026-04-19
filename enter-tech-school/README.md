@@ -6,4 +6,7 @@ Cada proyecto del trabajo es una **misión** (una carpeta con `_aclarador.md` ad
 
 ## Qué tipo de misiones van aquí
 
-- Proyectos de desarrollo (plataformas, features
+- Proyectos de desarrollo (plataformas, features)
+- Tareas de diseño, marketing, UX/UI
+- Operaciones técnicas (configuración de herramientas, deploys, infraestructura)
+- Cualquier cosa que me pidan o que surja dentro de Enter Tech School

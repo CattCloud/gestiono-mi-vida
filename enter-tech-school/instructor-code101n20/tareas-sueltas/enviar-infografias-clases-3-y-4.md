@@ -2,9 +2,9 @@
 tags:
   - enter-tech-school
   - instructor-code101n20
+  - completada
 tipo: tarea
 peso: 1
-estado: completada
 fecha_tipo: exacta
 fecha_inicio: 2026-04-16
 fecha_fin:

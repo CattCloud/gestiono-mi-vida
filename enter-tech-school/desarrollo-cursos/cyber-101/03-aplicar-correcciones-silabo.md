@@ -3,9 +3,9 @@ tags:
   - enter-tech-school
   - desarrollo-cursos
   - cyber-101
+  - completada
 tipo: tarea
 peso: 1
-estado: completada
 fecha_tipo: exacta
 fecha_inicio: 2026-04-16
 fecha_fin:

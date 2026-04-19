@@ -2,9 +2,9 @@
 tags:
   - enter-tech-school
   - migracion-blackboard
+  - pendiente
 tipo: tarea
 peso: 2
-estado: pendiente
 fecha_tipo: exacta
 fecha_inicio: 2026-04-18
 fecha_fin:

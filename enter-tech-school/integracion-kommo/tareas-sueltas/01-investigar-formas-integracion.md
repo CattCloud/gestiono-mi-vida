@@ -2,9 +2,9 @@
 tags:
   - enter-tech-school
   - integracion-kommo
+  - completada
 tipo: tarea
 peso: 3
-estado: completada
 fecha_tipo: exacta
 fecha_inicio: 2026-04-17
 fecha_fin:

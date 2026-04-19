@@ -27,4 +27,16 @@ SORT due ASC
 
 ```dataview
 TASK
-FROM "enter
+FROM "enter-tech-school"
+WHERE !completed AND contains(text, "⏳")
+SORT text ASC
+```
+
+## ✅ Completadas recientemente
+
+```dataview
+TASK
+FROM "enter-tech-school"
+WHERE completed
+SORT text ASC
+```

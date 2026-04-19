@@ -3,9 +3,9 @@ tags:
   - enter-tech-school
   - app-enterbase
   - exportaciones
+  - completada
 tipo: tarea
 peso: 1
-estado: completada
 fecha_tipo: sin-fecha
 fecha_inicio:
 fecha_fin:

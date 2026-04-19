@@ -3,9 +3,9 @@ tags:
   - enter-tech-school
   - app-enterbase
   - formulario-matriculados
+  - completada
 tipo: tarea
 peso: 2
-estado: completada
 fecha_tipo: exacta
 fecha_inicio: 2026-04-14
 fecha_fin:
