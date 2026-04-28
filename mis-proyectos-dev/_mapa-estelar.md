@@ -6,7 +6,7 @@ Todo lo que estoy construyendo por mi cuenta.
 
 ## Misiones activas
 
-(Aún no hay misiones activas.)
+- [[agatha/_aclarador|🧠 Agatha]]
 
 ---
 

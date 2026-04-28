@@ -21,7 +21,6 @@ Todas son funcionalidades "futuras" sin fecha exacta todavía, excepto "matricul
 2. Ver detalle completo del estudiante
 3. Editar datos de estudiantes existentes
 4. V2 del exportable con filtros previos
-5. Marcar asistencia múltiple desde el calendario
 
 ## Tareas
 
@@ -29,8 +28,8 @@ Todas son funcionalidades "futuras" sin fecha exacta todavía, excepto "matricul
 - [[editar-datos-estudiantes|📄 Editar datos de estudiantes existentes]] — peso 3 🟠 ⏳
 - [[ver-detalle-completo-estudiante|📄 Ver detalle completo del estudiante]] — peso 2 🟣 ⏳
 - [[v2-exportable-con-filtros|📄 V2 del exportable: filtros previos]] — peso 3 🟠 ⏳
-- [[asistencia-multiple-calendario|📄 Marcar asistencia múltiple desde calendario]] — peso 3 🟠 ⏳
 
 ## Notas
 
-- La asistencia múltiple se resuelve vía Blackboard API para los cursos migrados (ver misión `migracion-blackboard`). Esta tarea aplica solo para cursos que sigan en Enterbase/Canvas.
+- **(21-abr-2026)** La feature de asistencia/entregables múltiples se movió a su propia sub-misión `app-enterbase/acciones-multiples/` porque abarca dos features (asistencia + entregables) que comparten UI y requieren planificación + implementación cada una.
+- La asistencia múltiple se resuelve vía Blackboard API para los cursos migrados (ver misión `migracion-blackboard`). La sub-misión `acciones-multiples` aplica solo para cursos que sigan en Enterbase/Canvas.

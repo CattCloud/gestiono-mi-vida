@@ -3,13 +3,13 @@ tags:
   - enter-tech-school
   - app-enterbase
   - formulario-matriculados
-  - bloqueada
+  - completada
 tipo: tarea
 peso: 2
 fecha_tipo: sin-fecha
 fecha_inicio:
 fecha_fin:
-fecha_completado:
+fecha_completado: 2026-04-21
 orden: 5
 bloqueada_por:
   - 04-esperar-aprobacion-bruno
@@ -46,4 +46,4 @@ El deploy anterior (15-abr-2026) falló porque se hizo el merge sin correr la mi
 
 ## Tarea (CardBoard)
 
-- [ ] 🟣 Hacer PR, correr `npx prisma migrate deploy` y mergear a main (deploy automático) 🔒
+- [x] 🟣 Hacer PR, correr `npx prisma migrate deploy` y mergear a main (deploy automático) ✅ 2026-04-21

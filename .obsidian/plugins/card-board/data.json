@@ -111,73 +111,6 @@
             "tag": "undated",
             "data": {
               "collapsed": false,
-              "name": "Sin Fecha"
-            }
-          },
-          {
-            "tag": "completed",
-            "data": {
-              "collapsed": false,
-              "index": 4,
-              "limit": 20,
-              "name": "Completados"
-            }
-          }
-        ],
-        "filters": [
-          {
-            "tag": "pathFilter",
-            "data": "enter-tech-school/instructor-code101n20"
-          }
-        ],
-        "filterPolarity": "Allow",
-        "filterScope": "Both",
-        "name": "Date instructor-code101n20",
-        "showColumnTags": true,
-        "showFilteredTags": true
-      },
-      {
-        "columns": [
-          {
-            "tag": "dated",
-            "data": {
-              "collapsed": false,
-              "name": "Hoy",
-              "range": {
-                "tag": "before",
-                "data": 1
-              }
-            }
-          },
-          {
-            "tag": "dated",
-            "data": {
-              "collapsed": false,
-              "name": "Mañana",
-              "range": {
-                "tag": "between",
-                "data": {
-                  "from": 1,
-                  "to": 1
-                }
-              }
-            }
-          },
-          {
-            "tag": "dated",
-            "data": {
-              "collapsed": false,
-              "name": "Futuro",
-              "range": {
-                "tag": "after",
-                "data": 1
-              }
-            }
-          },
-          {
-            "tag": "undated",
-            "data": {
-              "collapsed": false,
               "name": "Sin fecha"
             }
           },
@@ -200,6 +133,53 @@
         "filterPolarity": "Allow",
         "filterScope": "Both",
         "name": "Date app-enterbase",
+        "showColumnTags": true,
+        "showFilteredTags": true
+      },
+      {
+        "columns": [
+          {
+            "tag": "namedTag",
+            "data": {
+              "collapsed": false,
+              "name": "Disponibles",
+              "tag": "#pendiente"
+            }
+          },
+          {
+            "tag": "namedTag",
+            "data": {
+              "collapsed": false,
+              "name": "En espera",
+              "tag": "#en-espera"
+            }
+          },
+          {
+            "tag": "namedTag",
+            "data": {
+              "collapsed": false,
+              "name": "Bloqueadas",
+              "tag": "#bloqueada"
+            }
+          },
+          {
+            "tag": "namedTag",
+            "data": {
+              "collapsed": false,
+              "name": "Completadas",
+              "tag": "#completada"
+            }
+          }
+        ],
+        "filters": [
+          {
+            "tag": "pathFilter",
+            "data": "enter-tech-school/app-enterbase/exportaciones"
+          }
+        ],
+        "filterPolarity": "Allow",
+        "filterScope": "Both",
+        "name": "Tag:Exportaciones",
         "showColumnTags": true,
         "showFilteredTags": true
       }

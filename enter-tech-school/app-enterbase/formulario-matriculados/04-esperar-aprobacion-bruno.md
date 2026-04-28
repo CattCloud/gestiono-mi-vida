@@ -3,13 +3,13 @@ tags:
   - enter-tech-school
   - app-enterbase
   - formulario-matriculados
-  - en-espera
+  - completada
 tipo: tarea
 peso: 2
 fecha_tipo: sin-fecha
 fecha_inicio:
 fecha_fin:
-fecha_completado:
+fecha_completado: 2026-04-21
 orden: 4
 bloqueada_por:
   - 03-generar-y-enviar-doc-bd
@@ -42,4 +42,4 @@ Si Bruno dice que no basta el doc y pide más info, esta tarea se queda pendient
 
 ## Tarea (CardBoard)
 
-- [ ] 🟣 Esperar aprobación de Bruno para deploy a producción ⏳
+- [x] 🟣 Esperar aprobación de Bruno para deploy a producción ✅ 2026-04-21

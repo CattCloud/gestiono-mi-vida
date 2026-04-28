@@ -2,16 +2,15 @@
 tags:
   - enter-tech-school
   - migracion-blackboard
-  - pendiente
+  - completada
 tipo: tarea
 peso: 2
 fecha_tipo: exacta
-fecha_inicio: 2026-04-20
+fecha_inicio: 2026-04-19
 fecha_fin:
-fecha_completado:
+fecha_completado: 2026-04-19
 orden:
 bloqueada_por:
-  - preparar-reunion-lunes
 desbloquea:
 ---
 
@@ -29,6 +28,8 @@ Esta reunión cierra los detalles técnicos necesarios para poder arrancar la im
 
 ## Notas
 
+- Se adelantó del 20-abr al 19-abr. Salió bien: se cerraron los detalles técnicos y arrancó la integración (cuenta dev, credenciales, API REST en `cetemin.blackboard.com`, pruebas Postman exitosas). Detalle completo en el aclarador de la misión.
+
 ## Tarea (CardBoard)
 
-- [ ] 🟣 Reunión de coordinación con Nicolás — manual, autorización y claves de conexión 📅 2026-04-20
+- [x] 🟣 Reunión de coordinación con Nicolás — manual, autorización y claves de conexión 📅 2026-04-19 ✅ 2026-04-19

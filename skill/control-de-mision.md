@@ -325,6 +325,46 @@ El usuario escribe ahí en **texto libre**, sin preocuparse por formato. Tu trab
 
 ---
 
+### 4.13 Mantener sincronizada la documentación del vault
+
+La documentación del sistema (README raíz, esta misma skill, READMEs locales) tiende a quedarse desactualizada cuando se hacen cambios estructurales. El agente debe vigilar activamente esta desalineación.
+
+**Cuándo aplica:**
+
+Cuando durante la conversación se hace uno o más de estos cambios:
+
+- Cambios en la estructura del vault (nuevo tipo de carpeta, nueva jerarquía, renombre de convenciones).
+- Cambios en el flujo de estados o en las reglas de tags (`#pendiente`/`#en-espera`/`#bloqueada`/`#completada`).
+- Cambios en plantillas (nueva plantilla, plantilla movida, cambio de formato).
+- Cambios en plugins (nuevo plugin esencial, plugin eliminado, nueva capacidad como Dataview JS).
+- Cambios en convenciones visuales (snippets CSS nuevos, emojis de peso, formato de fecha).
+- Cambios en el skill mismo (nueva sección, regla cambiada, flujo alterado).
+
+**Cuándo NO aplica:**
+
+- Completar o crear tareas individuales.
+- Editar el contenido específico de una tarea o aclarador.
+- Capturar destellos o procesar notas.
+- Corregir desincronizaciones del barrido §4.11.
+
+**Cómo actuar:**
+
+1. Durante el trabajo, anota mentalmente qué cambios estructurales se hicieron.
+2. Al final de la conversación (o cuando se cierre un bloque de cambios), revisa si:
+   - El `README.md` raíz sigue describiendo fielmente la estructura, los estados, los plugins y las plantillas.
+   - La propia `skill/control-de-mision.md` tiene secciones o ejemplos que quedaron obsoletos por el cambio.
+   - Los READMEs locales relevantes (`.obsidian/snippets/README.md`, `_prueba-estructura/README.md`, `enter-tech-school/README.md`, etc.) siguen siendo correctos.
+3. Si detectas desalineación, **propón la actualización al usuario**, nunca la hagas silenciosamente:
+   > "Cambiamos el formato de tareas; el README raíz (sección X) y la skill §5.3 quedaron desactualizados. ¿Los actualizo antes de cerrar?"
+4. Tras confirmación, actualiza. Tras rechazo, déjalo anotado en `notas.md` bajo "💡 Ideas de mejora del sistema" para que no se pierda.
+
+**Importante:**
+- Esta regla es proactiva: no esperes a que el usuario te pida actualizar la documentación. Él puede estar cansado al final de una sesión larga y no notarlo.
+- Si tienes duda sobre si un cambio "cuenta" como estructural, pregunta en vez de asumir.
+- No infles el README con detalles de implementación. El README describe *qué es* el sistema y *cómo se usa*; la skill describe *cómo opera el agente*. Mantén la división.
+
+---
+
 ## 5. Formato de archivos
 
 El sistema usa una jerarquía de 4 niveles: **Planeta → Misión → Sub-misión (opcional) → Tarea**. Cada nivel tiene su propio formato.

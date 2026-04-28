@@ -29,9 +29,10 @@ También se definieron funcionalidades para la siguiente versión (V2): matricul
 
 ## Sub-misiones activas
 
-- [[formulario-matriculados/_aclarador|📂 Formulario de matriculados]] — 5 tareas secuenciales (3 completadas, 2 pendientes)
+- [[formulario-matriculados/_aclarador|📂 Formulario de matriculados]] — ✅ 5/5 completada (en producción desde 21-abr)
 - [[exportaciones/_aclarador|📂 Exportaciones / Descargables]] — 10 tareas (4 completadas, 6 pendientes)
-- [[v2-funcionalidades/_aclarador|📂 V2 — Siguientes funcionalidades]] — 5 tareas futuras
+- [[acciones-multiples/_aclarador|📂 Acciones múltiples (Asistencia / Entregables)]] — 4 tareas (planificación hoy 21-abr)
+- [[v2-funcionalidades/_aclarador|📂 V2 — Siguientes funcionalidades]] — 4 tareas futuras
 
 ## Tareas sueltas
 

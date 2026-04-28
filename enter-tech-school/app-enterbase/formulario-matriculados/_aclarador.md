@@ -14,7 +14,7 @@ mision_padre: app-enterbase
 
 Sub-misión dentro de app-enterbase. El objetivo es digitalizar el Excel que se usaba para registrar matrículas, reemplazándolo por un formulario en Enterbase.
 
-**Estado actual (18-abr-2026):** Formulario listo, testeado y con documento de cambios de BD ya enviado a Bruno. Falta que Bruno apruebe el deploy y luego hacer el PR final con su merge a main (el deploy es automático al mergear).
+**Estado actual (22-abr-2026):** ✅ Sub-misión completada. Bruno aprobó el deploy y el PR se mergeó exitosamente el 21-abr. El formulario de matriculados V2 está en producción.
 
 Esta sub-misión incluye 5 tareas secuenciales (ver orden en los archivos 01, 02, 03, 04, 05).
 
@@ -23,8 +23,8 @@ Esta sub-misión incluye 5 tareas secuenciales (ver orden en los archivos 01, 02
 - [[01-cambiar-orden-secciones|📄 01 — Cambiar orden de secciones]] — peso 1 🟡 ✅ completada
 - [[02-testear-formulario|📄 02 — Testear formulario con cambios BD]] — peso 2 🟣 ✅ completada
 - [[03-generar-y-enviar-doc-bd|📄 03 — Generar doc de cambios BD y enviar a Bruno]] — peso 3 🟠 ✅ completada
-- [[04-esperar-aprobacion-bruno|📄 04 — Esperar aprobación de Bruno]] — peso 2 🟣 ⏳ en espera
-- [[05-hacer-pr-y-merge|📄 05 — Hacer PR, auto-aprobar y merge a main]] — peso 2 🟣 🔒 bloqueada
+- [[04-esperar-aprobacion-bruno|📄 04 — Esperar aprobación de Bruno]] — peso 2 🟣 ✅ completada
+- [[05-hacer-pr-y-merge|📄 05 — Hacer PR, auto-aprobar y merge a main]] — peso 2 🟣 ✅ completada
 
 ## Notas
 

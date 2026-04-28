@@ -3,13 +3,13 @@ tags:
   - enter-tech-school
   - desarrollo-cursos
   - cyber-101
-  - en-espera
+  - completada
 tipo: tarea
 peso: 2
 fecha_tipo: sin-fecha
 fecha_inicio:
 fecha_fin:
-fecha_completado:
+fecha_completado: 2026-04-22
 orden: 4
 bloqueada_por:
   - 02-responder-preguntas-instructor
@@ -34,4 +34,4 @@ Este es el paso final antes de arrancar la generación de contenidos (clases, la
 
 ## Tarea (CardBoard)
 
-- [ ] 🟣 Reunión con Mhitzy — generación de documentación de Cyber 101 ⏳
+- [x] 🟣 Reunión con Mhitzy — generación de documentación de Cyber 101 ✅ 2026-04-22

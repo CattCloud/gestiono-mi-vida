@@ -2,13 +2,13 @@
 tags:
   - enter-tech-school
   - migracion-blackboard
-  - pendiente
+  - completada
 tipo: tarea
 peso: 2
 fecha_tipo: exacta
 fecha_inicio: 2026-04-18
 fecha_fin:
-fecha_completado:
+fecha_completado: 2026-04-19
 orden:
 bloqueada_por:
 desbloquea:
@@ -28,8 +28,8 @@ Preparar el material/preguntas/contexto necesarios para la reunión del lunes (p
 
 ## Notas
 
-- Si es con alguien distinto a Nicolás, actualizar el detalle.
+- **Descartada el 19-abr-2026:** no era necesaria. Se pasó directamente a la reunión con Nicolás sin preparar el documento guía.
 
 ## Tarea (CardBoard)
 
-- [ ] 🟣 Preparar lo necesario para la reunión del lunes 📅 2026-04-18
+- [x] 🟣 Preparar lo necesario para la reunión del lunes 📅 2026-04-18 ✅ 2026-04-19

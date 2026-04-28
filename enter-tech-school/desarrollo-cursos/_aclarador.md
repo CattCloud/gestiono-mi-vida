@@ -19,7 +19,10 @@ Proyecto de desarrollo de diversos cursos (Code101, Cyber101, etc.) usando un si
 
 ## Tareas sueltas
 
-(Ninguna por ahora.)
+### Donatto / Code 201
+- [[tareas-sueltas/generar-contenido-proyecto-donatto-code201|📄 Generar contenido del proyecto del módulo — Donatto, Code 201]] — peso 2 🟣 ✅ completada (27-abr)
+- [[tareas-sueltas/subir-contenido-donatto-repo|📄 Subir contenido al repositorio remoto]] — peso 1 🟡 📅 pendiente (hoy 27-abr)
+- [[tareas-sueltas/avisar-donatto-contenido-listo|📄 Avisar a Donatto que el contenido está listo]] — peso 1 🟡 🔒 bloqueada
 
 ## Notas
 

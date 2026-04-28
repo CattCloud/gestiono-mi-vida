@@ -14,7 +14,7 @@ mision_padre: app-enterbase
 
 Sub-misión dentro de app-enterbase. El objetivo es que Gaby y el equipo puedan descargar datos operativos de Enterbase en Excel, en lugar de consultar/calcular manualmente desde Cloud.
 
-**Estado actual (18-abr-2026):** El 15-abr el equipo validó el formato de los Excel (Personas y Sección > Alumnos). Se aprobó avanzar. Plan: implementación el 16-abr, subir el 17-abr para que Gaby pruebe, y uso oficial la próxima semana. Mientras, sigue calculando como venía haciéndolo.
+**Estado actual (19-abr-2026):** El 15-abr el equipo validó el formato de los Excel (Personas y Sección > Alumnos). Se aprobó avanzar. Hoy se ejecuta la implementación de forma **secuencial**: primero Personas, luego Sección > Alumnos. La tarea original que juntaba ambas (peso 3) se partió en dos tareas de peso 2 para tener tracking por feature. Gaby probará cuando ambas estén subidas. Mientras, sigue calculando como venía haciéndolo.
 
 **Orden de prioridad acordado:**
 1. Sección > Alumnos (ya avanzado)
@@ -33,8 +33,13 @@ Sub-misión dentro de app-enterbase. El objetivo es que Gaby y el equipo puedan 
 - [[01-esperar-respuestas-equipo|📄 01 — Esperar respuestas del equipo sobre consultas]] — peso 1 🟡 ✅ completada
 - [[02-analisis-personas|📄 02 — Análisis exportación: Personas]] — peso 3 🟠 ✅ completada
 - [[03-presentacion-avance|📄 03 — Presentación avance Sección/Personas]] — peso 2 🟣 ✅ completada
-- [[04-implementar-seccion-personas|📄 04 — Implementar exportación: Sección > Alumnos y Personas]] — peso 3 🟠 📅 pendiente
-- [[05-probar-con-gaby|📄 05 — Probar con Gaby la exportación implementada]] — peso 2 🟣 ⏳ en espera
+- [[04-implementar-personas|📄 04 — Implementar exportación: Personas]] — peso 2 🟣 ✅ completada
+- [[05a-planear-seccion-alumnos|📄 05a — Planear exportación: Sección > Alumnos]] — peso 1 🟡 ✅ completada
+- [[05b-implementar-seccion-alumnos|📄 05b — Implementar exportación: Sección > Alumnos]] — peso 2 🟣 ✅ completada (23-abr)
+- [[05c-testear-personas-y-secciones|📄 05c — Testing técnico: Personas y Sección > Alumnos]] — peso 2 🟣 ✅ completada (23-abr)
+- [[05d-pr-merge-exportaciones|📄 05d — PR y merge a main — exportaciones]] — peso 2 🟣 ✅ completada (23-abr) — en producción
+
+_(La antigua tarea `06-probar-con-gaby` se eliminó el 24-abr: Gaby prueba las exportaciones por su cuenta, sin tarea espejo acá.)_
 
 ### Análisis pendientes (otras exportaciones)
 

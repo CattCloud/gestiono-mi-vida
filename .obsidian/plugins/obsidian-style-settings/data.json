@@ -1,6 +1,6 @@
 {
   "shimmering-focus@@normal-tab-bar": true,
-  "shimmering-focus@@show-sidebar-toggle-buttons": true,
+  "shimmering-focus@@show-sidebar-toggle-buttons": false,
   "shimmering-focus@@show-tab-list-button": true,
   "shimmering-focus@@show-new-tab-button": false,
   "shimmering-focus@@show-sidebar-header-buttons": true,
